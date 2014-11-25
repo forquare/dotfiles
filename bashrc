@@ -1,5 +1,8 @@
 #Ben's bashrc
 
+# If not running interactively, don't do anything
+[ -z "$PS1" ] && return
+
 #######################
 #     Shell Prefs     #
 #######################
@@ -14,6 +17,8 @@ export PROMPT_COMMAND="history -a"
 bind 'set completion-ignore-case on'
 set -o vi
 export PS1="\[\e[00;36m\]\u@\h:\W \$>\[\e[0m\]"
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"  
 
 umask 0022
 
@@ -38,6 +43,8 @@ if [ `uname` == "Darwin" ]; then
 	source ~/perl5/perlbrew/etc/bashrc
 fi
 
+[ -d /home/minecraft-ben/opt/bin ] && export PATH="$PATH:/home/minecraft-ben/opt/bin"
+
 #######################
 #         SSH         #
 #######################
@@ -55,6 +62,8 @@ if [ -n "$SSH_CLIENT" ]; then
 		fi
 	fi
 fi
+
+
 
 #######################
 #       History       #
