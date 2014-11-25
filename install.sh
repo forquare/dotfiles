@@ -1,7 +1,6 @@
 #!/bin/bash
 
 DIR=~/Dropbox/WorkBench/dotfiles
-echo DIR
 for file in bashrc gitignore; do
 	if [ -e $HOME/.${file} ]
 	then echo ".$file found, doing nothing"
