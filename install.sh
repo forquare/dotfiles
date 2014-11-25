@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DIR=~/Dropbox/WorkBench/dotfiles
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd ) # FROM http://stackoverflow.com/questions/59895/can-a-bash-script-tell-what-directory-its-stored-in
 for file in bashrc gitignore; do
 	if [ -e $HOME/.${file} ]
 	then echo ".$file found, doing nothing"
