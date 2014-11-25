@@ -1,0 +1,32 @@
+[user]
+  name = NAME
+  email = EMAIL
+[alias]
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
+  di = diff
+  dc = diff --cached
+  amend = commit --ammend
+  aa = add --all
+  lg = log --no-merges
+  log-merges = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  #hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  #type = cat-file -t
+  #dump = cat-file -p
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+[core]
+  excludesfile = HOME/.gitignore
+  autocrlf = input
+  editor = vim
+[format]
+  pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset
+[github]
+  user = GITHUB
+[push]
+  default = current
+
