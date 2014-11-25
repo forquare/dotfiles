@@ -1,8 +1,8 @@
 #!/bin/bash
 # DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-DIR=~/dotfiles
+DIR=~/Dropbox/WorkBench/dotfiles
 echo DIR
-for file in vimrc tmux.conf bash_profile bashrc ackrc vim bash gitignore tmx liquidpromptrc ansible.cfg gemrc zshrc
+ror file in  bashrc  gitignore
 do
   if [ -e $HOME/.${file} ]
   then echo ".$file found, doing nothing"
