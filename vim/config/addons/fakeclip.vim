@@ -1,1 +1,0 @@
-Bundle 'kana/vim-fakeclip'
