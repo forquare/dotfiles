@@ -43,7 +43,9 @@ if [ `uname` == "Darwin" ]; then
 	source ~/perl5/perlbrew/etc/bashrc
 fi
 
-[ -d /home/minecraft-ben/opt/bin ] && export PATH="$PATH:/home/minecraft-ben/opt/bin"
+if [ -d /home/manaha-minecrafter/opt/bin ]; then
+	export PATH="$PATH:/home/manaha-minecrafter/opt/bin"
+fi
 
 #######################
 #         SSH         #
