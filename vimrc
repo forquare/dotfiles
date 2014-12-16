@@ -8,7 +8,6 @@ filetype indent on
 " Set to auto read when a file is changed from the outside
 set autoread
 
-
 " Always show current position
 set ruler
 
@@ -48,6 +47,8 @@ set ffs=unix,dos,mac
 set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
+set paste
+set number
 
 " Pressing ,ss will toggle and untoggle spell checking
 map <leader>ss :setlocal spell!<cr>
