@@ -1,16 +1,18 @@
 #!/bin/bash
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd ) # FROM http://stackoverflow.com/questions/59895/can-a-bash-script-tell-what-directory-its-stored-in
-for file in bashrc gitignore; do
-	if [ -e $HOME/.${file} ]
-	then echo ".$file found, doing nothing"
-	else ln -sf $DIR/$file $HOME/.$file && echo ".$file installed"
+
+for file in bashrc gitignore vimrc vim; do
+	if [ -e $HOME/.${file} ]; then
+		echo ".$file found, doing nothing"
+	else
+		ln -sf $DIR/$file $HOME/.$file && echo ".$file installed"
 	fi
 done
 
 # gitconfig
-if [ -e $HOME/.gitconfig ]
-then echo ".gitconfig found, doing nothing"
+if [ -e $HOME/.gitconfig ]; then
+	echo ".gitconfig found, doing nothing"
 else 
 	echo "Git Details"
 	echo "-----------"
