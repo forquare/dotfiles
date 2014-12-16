@@ -107,8 +107,3 @@ hi htmlbold guifg=#D0D0D0 guibg=#1F1F1F guisp=#1F1F1F gui=bold ctermfg=252 cterm
 hi htmlboldunderline guifg=#D0D0D0 guibg=#1F1F1F guisp=#1F1F1F gui=bold,underline ctermfg=252 ctermbg=234 cterm=bold,underline
 hi htmlunderline guifg=#D0D0D0 guibg=#1F1F1F guisp=#1F1F1F gui=underline ctermfg=252 ctermbg=234 cterm=underline
 "hi default -- no settings --
-hi typedef guifg=#3ea4bd guibg=NONE guisp=NONE gui=NONE ctermfg=73 ctermbg=NONE cterm=NONE
-hi yamltab guifg=NONE guibg=#ffe0e0 guisp=#ffe0e0 gui=NONE ctermfg=NONE ctermbg=224 cterm=NONE
-hi yamlbasekey guifg=NONE guibg=NONE guisp=NONE gui=bold,underline ctermfg=NONE ctermbg=NONE cterm=bold,underline
-hi user1 guifg=#1a1a1a guibg=#7ee11a guisp=#7ee11a gui=bold ctermfg=234 ctermbg=76 cterm=bold
-hi phpdocblock guifg=#61b2b2 guibg=#050405 guisp=#050405 gui=bold,italic,underline ctermfg=73 ctermbg=232 cterm=bold,underline
