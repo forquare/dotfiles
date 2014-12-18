@@ -11,7 +11,7 @@ export PAGER='less'
 export HISTCONTROL=ignoredups:ignoreboth
 export HISTTIMEFORMAT='[%d/%m %H:%M] '
 export HISTSIZE=2000
-export HISTFILESIZE=100000
+export HISTFILESIZE=10000
 shopt -s histappend
 export PROMPT_COMMAND="history -a"
 bind 'set completion-ignore-case on'
@@ -39,12 +39,24 @@ alias ls='ls -hF'
 #    Path settings    #
 #######################
 if [ `uname` == "Darwin" ]; then
-	export PATH="~/scripts:$PATH:/Developer/usr/bin:/Applications/MAMP/Library/bin:/usr/local/clamXav/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/opt/homebrew/bin"
+	export PATH="$PATH:/usr/local/clamXav/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/opt/homebrew/bin"
 	source ~/perl5/perlbrew/etc/bashrc
 fi
 
 if [ -d /home/manaha-minecrafter/opt/bin ]; then
 	export PATH="$PATH:/home/manaha-minecrafter/opt/bin"
+fi
+
+if [ -d ~/perl5/perlbrew/etc/bashrc ]; then
+	source ~/perl5/perlbrew/etc/bashrc
+fi
+
+if [ -e ~/scripts ]; then
+	export PATH="~/scripts:$PATH"
+fi
+
+if [ -e ~/bin ]; then
+	export PATH="~/bin:$PATH"
 fi
 
 #######################
@@ -65,13 +77,12 @@ if [ -n "$SSH_CLIENT" ]; then
 	fi
 fi
 
-
-
 #######################
 #       History       #
 #######################
 
-#Last edited: 20/08/14
+#Last edited: 18/12/14
+# - Split PATH stuff up with tests
 
 #Last edited: 20/08/
 # - Removed Admiral Acbar Crtl-C trap - it was annoying
