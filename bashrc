@@ -17,8 +17,6 @@ export PROMPT_COMMAND="history -a"
 bind 'set completion-ignore-case on'
 set -o vi
 export PS1="\[\e[00;36m\]\u@\h:\W \$>\[\e[0m\]"
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"  
 
 umask 0022
 
@@ -83,6 +81,7 @@ fi
 
 #Last edited: 18/12/14
 # - Split PATH stuff up with tests
+# - Removed lesspipe
 
 #Last edited: 20/08/
 # - Removed Admiral Acbar Crtl-C trap - it was annoying
