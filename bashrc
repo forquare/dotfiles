@@ -15,6 +15,7 @@ export HISTFILESIZE=10000
 shopt -s histappend
 export PROMPT_COMMAND="history -a"
 bind 'set completion-ignore-case on'
+bind 'set mark-symlinked-directories on'
 set -o vi
 export PS1="\[\e[00;36m\]\u@\h:\W \$>\[\e[0m\]"
 
