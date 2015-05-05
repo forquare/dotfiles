@@ -62,22 +62,22 @@ fi
 #######################
 if [ -n "$SSH_CLIENT" ]; then
 	export PS1="\[\e[00;36m\]\u@\[\e[0;37m\]\h\[\e[00;36m\]:\W \$>\[\e[0m\]"
+fi
 
-	if command -v tmux>/dev/null; then
-		if [[ ! $TERM =~ screen ]] && [ -z $TMUX ]; then
-			tmux list-sessions | grep login > /dev/null
-			if [ $? -eq 0 ]; then
-				tmux attach -t login
-			else
-				tmux new -s login
-			fi
-		fi
-	fi
+######################
+#         GIT        #
+######################
+if [ -e ~/.git-completion.bash ]; then
+	source ~/.git-completion.bash
 fi
 
 #######################
 #       History       #
 #######################
+
+#Last edited 05/04/15
+# - Added git autocompletion
+# - Removed tmux on SSH login
 
 #Last edited: 18/12/14
 # - Split PATH stuff up with tests
