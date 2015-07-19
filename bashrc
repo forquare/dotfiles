@@ -49,12 +49,17 @@ if [ -d ~/perl5/perlbrew/etc/bashrc ]; then
 	source ~/perl5/perlbrew/etc/bashrc
 fi
 
-if [ -e ~/scripts ]; then
+if [ -d ~/scripts ]; then
 	export PATH="~/scripts:$PATH"
 fi
 
-if [ -e ~/bin ]; then
+if [ -d ~/bin ]; then
 	export PATH="~/bin:$PATH"
+fi
+
+if [ -d ~/ownCloud/WorkBench/Pi/yagarto/yagarto-4.7.2 ]; then
+	export PATH="$PATH:~/ownCloud/WorkBench/Pi/yagarto/yagarto-4.7.2/bin"
+	export PATH="$PATH:~/ownCloud/WorkBench/Pi/yagarto/yagarto-4.7.2/tools"
 fi
 
 #######################
