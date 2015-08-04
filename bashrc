@@ -38,7 +38,25 @@ alias ls='ls -hF'
 #    Path settings    #
 #######################
 if [ `uname` == "Darwin" ]; then
-	export PATH="$PATH:/usr/local/clamXav/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/opt/homebrew/bin:/Library/Frameworks/Mono.framework/Versions/Current/bin/"
+	if [ -d /usr/local/clamXav/bin ]; then
+		export PATH="$PATH:/usr/local/clamXav/bin"
+	fi
+
+	if [ -d /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin ]; then
+		export PATH="$PATH:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin"
+	fi
+
+	if [ -d /Library/Frameworks/Mono.framework/Versions/Current/bin ]; then
+		export PATH="$PATH:/Library/Frameworks/Mono.framework/Versions/Current/bin"
+	fi
+
+	if [ -d /opt/homebrew/bin ]; then
+		export PATH="/opt/homebrew/bin:$PATH"
+	fi
+
+	if [ -d /opt/homebrew/sbin ]; then
+		export PATH="/opt/homebrew/sbin:$PATH"
+	fi
 fi
 
 if [ -d /home/manaha-minecrafter/opt/bin ]; then
