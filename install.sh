@@ -8,6 +8,18 @@ for file in bashrc gitignore git-completion.bash vimrc vim tmux.conf; do
 	else
 		ln -sf $DIR/$file $HOME/.$file && echo ".$file installed"
 	fi
+
+	#On OS X we need to source .bashrc from .profile
+	if [[ "$file" == "bashrc" ]] && [[ `uname` == "Darwin" ]]; then
+		grep "source ~/.bashrc" ~/.profile > /dev/null
+		if [[ $? != 0 ]]; then
+			echo "    Sourcing .bashrc in .profile"
+			echo "source ~/.bashrc" >> ~/.profile
+		else
+			echo "    .bashrc already sourced in .profile"
+		fi
+	fi
+			
 done
 
 # gitconfig
