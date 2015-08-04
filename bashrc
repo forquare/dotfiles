@@ -57,11 +57,6 @@ if [ -d ~/bin ]; then
 	export PATH="~/bin:$PATH"
 fi
 
-if [ -d ~/ownCloud/WorkBench/Pi/yagarto/yagarto-4.7.2 ]; then
-	export PATH="$PATH:~/ownCloud/WorkBench/Pi/yagarto/yagarto-4.7.2/bin"
-	export PATH="$PATH:~/ownCloud/WorkBench/Pi/yagarto/yagarto-4.7.2/tools"
-fi
-
 #######################
 #         SSH         #
 #######################
