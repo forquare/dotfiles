@@ -63,7 +63,7 @@ if [ -d /home/manaha-minecrafter/opt/bin ]; then
 	export PATH="$PATH:/home/manaha-minecrafter/opt/bin"
 fi
 
-if [ -d ~/perl5/perlbrew/etc/bashrc ]; then
+if [ -f ~/perl5/perlbrew/etc/bashrc ]; then
 	source ~/perl5/perlbrew/etc/bashrc
 fi
 
