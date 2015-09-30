@@ -53,10 +53,10 @@ if [ `uname` == "Darwin" ]; then
 	if [ -d /opt/homebrew/sbin ]; then
 		export PATH="/opt/homebrew/sbin:$PATH"
 	fi
-fi
 
-if [ -d /opt/homebrew/bin ]; then
-	export PATH="/opt/homebrew/bin:$PATH"
+	if [ -d /opt/homebrew/bin ]; then
+		export PATH="/opt/homebrew/bin:$PATH"
+	fi
 fi
 
 if [ -d /home/manaha-minecrafter/opt/bin ]; then
