@@ -50,13 +50,13 @@ if [ `uname` == "Darwin" ]; then
 		export PATH="$PATH:/Library/Frameworks/Mono.framework/Versions/Current/bin"
 	fi
 
-	if [ -d /opt/homebrew/bin ]; then
-		export PATH="/opt/homebrew/bin:$PATH"
-	fi
-
 	if [ -d /opt/homebrew/sbin ]; then
 		export PATH="/opt/homebrew/sbin:$PATH"
 	fi
+fi
+
+if [ -d /opt/homebrew/bin ]; then
+	export PATH="/opt/homebrew/bin:$PATH"
 fi
 
 if [ -d /home/manaha-minecrafter/opt/bin ]; then
