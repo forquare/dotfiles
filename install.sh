@@ -22,6 +22,14 @@ for file in bashrc gitignore git-completion.bash vimrc vim tmux.conf; do
 			
 done
 
+if [[ `uname` == "FreeBSD" ]]; then
+	if [ -e $HOME/.xsession ]; then
+		echo ".xsession found, doing nothing"
+	else
+		ln -sf $DIR/xsession $HOME/.xsession && echo ".xsession installed"
+	fi
+fi
+
 # gitconfig
 if [ -e $HOME/.gitconfig ]; then
 	echo ".gitconfig found, doing nothing"
