@@ -83,10 +83,10 @@ if [ -n "$SSH_CLIENT" ]; then
 fi
 
 ######################
-#         GIT        #
+#     COMPLETIONS    #
 ######################
-if [ -e ~/.git-completion.bash ]; then
-	source ~/.git-completion.bash
+if [ -d ~/.bash-completions ]; then
+	source ~/.bash-completions/*.bash
 fi
 
 #######################
