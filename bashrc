@@ -85,13 +85,16 @@ fi
 ######################
 #     COMPLETIONS    #
 ######################
-if [ -d ~/.bash-completions ]; then
-	source ~/.bash-completions/*.bash
-fi
+#if [ -d ~/.bash-completions ]; then
+#	source ~/.bash-completions/*.bash
+#fi
 
 #######################
 #       History       #
 #######################
+
+#Last edited 03/04/16
+# - Removed completions, no longer default shell
 
 #Last edited 05/04/15
 # - Added git autocompletion
