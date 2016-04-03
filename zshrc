@@ -24,8 +24,7 @@ setopt CORRECT
 autoload -Uz compinit
 compinit
 
-zstyle ':completion:*' completer _expand _complete _correct _approximate
-
+setopt no_auto_remove_slash
 
 #####################
 #   History Prefs   #
