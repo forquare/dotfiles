@@ -14,8 +14,8 @@ bindkey -v
 bindkey '^R' history-incremental-search-backward
 
 # Using what is already on the current line, reverse search with up/down
-bindkey "^[[A" history-search-backward
-bindkey "^[[B" history-search-forward 
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward 
 
 # 755 for directories, 644 for files
 umask 0022
