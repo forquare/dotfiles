@@ -104,12 +104,17 @@ if [ -f ~/perl5/perlbrew/etc/bashrc ]; then
         source ~/perl5/perlbrew/etc/bashrc
 fi
 
-# Somethimes I have scripts in my home dir
+# Sometimes I have scripts in my home dir
 if [ -d ~/scripts ]; then
         export PATH="~/scripts:$PATH"
 fi
 
-# Somethimes I have binaries in my home dir
+# Though mostly I have scripts from nextcloud
+if [ -d ~/nextcloud/scripts ]; then
+        export PATH="~/nextcloud/scripts:$PATH"
+fi
+
+# Sometimes I have binaries in my home dir
 if [ -d ~/bin ]; then
         export PATH="~/bin:$PATH"
 fi
