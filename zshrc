@@ -88,6 +88,11 @@ if [[ $(uname) == "Darwin" ]]; then
                 export PATH="/opt/homebrew/sbin:$PATH"
         fi
 
+	# I've taken to using pkgsrc instead
+	if [ -d /opt/pkg/bin ]; then
+		export PATH="/opt/pkg/bin:$PATH"
+	fi
+
 	# I keep homebrew in /opt
         if [ -d /opt/homebrew/bin ]; then
                 export PATH="/opt/homebrew/bin:$PATH"
