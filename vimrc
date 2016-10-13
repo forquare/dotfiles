@@ -55,3 +55,6 @@ map <leader>ss :setlocal spell!<cr>
 
 " Mostly taken from
 " http://amix.dk/vim/vimrc.html
+
+" Stop hideous mouse integration
+autocmd BufEnter * set mouse=
