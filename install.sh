@@ -2,7 +2,7 @@
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd ) # FROM http://stackoverflow.com/questions/59895/can-a-bash-script-tell-what-directory-its-stored-in
 
-for file in bashrc zshrc gitignore vimrc vim tmux.conf; do
+for file in bashrc zshrc gitignore vimrc vim tmux.conf pyrc; do
 	if [ -e $HOME/.${file} ]; then
 		echo ".$file found, doing nothing"
 	else
