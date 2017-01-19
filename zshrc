@@ -42,6 +42,9 @@ compinit
 # Do not remove trailing slashes from directories OR symlinks to directories
 setopt no_auto_remove_slash
 
+# Specify python rc file, to enable vi style editing and persistent history
+export PYTHONSTARTUP=~/.pyrc
+
 #####################
 #   History Prefs   #
 #####################
