@@ -134,6 +134,13 @@ if [ -n "$SSH_CLIENT" ]; then
 fi
 
 #####################
+#     LOCAL.RC      #
+#####################
+if [ -f "$HOME/.zshrclocal" ]; then
+	source "$HOME/.zshrclocal"
+fi
+
+#####################
 #      History      #
 #####################
 
