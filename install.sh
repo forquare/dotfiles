@@ -12,9 +12,9 @@ for file in bashrc zshrc gitignore vimrc vim tmux.conf pyrc; do
 	fi
 
 	#On OS X we need to source .bashrc from .profile
-	if [[ "$file" == "bashrc" ]] && [[ `uname` == "Darwin" ]]; then
+	if [ "$file" == "bashrc" ] && [ $(uname) == "Darwin" ]; then
 		grep "source ~/.bashrc" ~/.profile > /dev/null
-		if [[ $? != 0 ]]; then
+		if [ $? != 0 ]; then
 			echo "    Sourcing .bashrc in .profile"
 			echo "source ~/.bashrc" >> ~/.profile
 		else
@@ -24,16 +24,7 @@ for file in bashrc zshrc gitignore vimrc vim tmux.conf pyrc; do
 			
 done
 
-#for directory in bash-completions; do
-#	if [ -d $HOME/.${directory} ]; then
-#		echo ".$directory found, doing nothing"
-#	else
-#		ln -sf $DIR/$directory $HOME/.$directory && echo ".$directory installed"
-#	fi
-#done
-
-
-if [[ `uname` == "FreeBSD" ]]; then
+if [ $(uname) == "FreeBSD" ]; then
 	if [ -e $HOME/.xsession ]; then
 		echo ".xsession found, doing nothing"
 	else
