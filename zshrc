@@ -1,5 +1,4 @@
-# Ben's ZSHrc
-
+# Ben's ZSHrc 
 #####################
 #    Shell Prefs    #
 #####################
@@ -53,11 +52,11 @@ export HISTSIZE=1000            # Internal size
 export SAVEHIST=10000           # File size
 setopt HIST_IGNORE_DUPS         # No duplicate entries
 setopt HIST_SAVE_NO_DUPS        # No duplicate entries
-setopt INC_APPEND_HISTORY_TIME  # Add history to file on execution
 setopt HIST_REDUCE_BLANKS       # Don't save blank lines
 setopt EXTENDED_HISTORY         # Add timestamps to history
 setopt SHARE_HISTORY            # Share history between active shells
 setopt HIST_BEEP                # Beep if we go beyond top/bottom of history
+setopt INC_APPEND_HISTORY_TIME  # Add history to file on execution
 
 #####################
 #      Aliases      #
@@ -72,10 +71,6 @@ alias ls='ls -hF'
 #####################
 # If I'm on a Mac check this stuff out, if not then don't even bother
 if [[ $(uname) == "Darwin" ]]; then
-        if [ -d /usr/local/clamXav/bin ]; then
-                export PATH="$PATH:/usr/local/clamXav/bin"
-        fi
-
 	# Apple Developer Tools
         if [ -d /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin ]; then
                 export PATH="$PATH:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin"
@@ -95,16 +90,6 @@ if [[ $(uname) == "Darwin" ]]; then
 	if [ -d /opt/pkg/bin ]; then
 		export PATH="/opt/pkg/bin:$PATH"
 	fi
-
-	# I keep homebrew in /opt
-        if [ -d /opt/homebrew/bin ]; then
-                export PATH="/opt/homebrew/bin:$PATH"
-        fi
-fi
-
-# Minecraft scripts
-if [ -d /home/manaha-minecrafter/opt/bin ]; then
-        export PATH="$PATH:/home/manaha-minecrafter/opt/bin"
 fi
 
 # Awesome Perlbrew
@@ -143,6 +128,9 @@ fi
 #####################
 #      History      #
 #####################
+
+# 28/05/2017
+# Removed some PATH settings, and moved some others to zshrclocal
 
 # Created: 02/04/2016
 # Cloned much from bashrc
