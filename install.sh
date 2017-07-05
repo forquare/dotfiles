@@ -11,8 +11,7 @@ for file in bashrc zshrc gitignore vimrc vim tmux.conf pyrc; do
 		ln -sf $DIR/$file $HOME/.$file && echo ".$file installed"
 	fi
 
-	#On OS X we need to source .bashrc from .profile
-	if [ "$file" == "bashrc" ] && [ $(uname) == "Darwin" ]; then
+	if [ "$file" = "bashrc" ] && [ $(uname) = "Darwin" ]; then
 		grep "source ~/.bashrc" ~/.profile > /dev/null
 		if [ $? != 0 ]; then
 			echo "    Sourcing .bashrc in .profile"
