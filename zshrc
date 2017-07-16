@@ -5,6 +5,7 @@
 # Set edditing and viewing preferences
 export EDITOR='vim'
 export PAGER='less'
+export VISUAL='vim'
 
 # Vi keys, what else?
 bindkey -v
@@ -40,6 +41,10 @@ compinit
 
 # Do not remove trailing slashes from directories OR symlinks to directories
 setopt no_auto_remove_slash
+
+# Enable full screen command editing using 'v' in command mode
+autoload edit-command-line; zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
 
 # Specify python rc file, to enable vi style editing and persistent history
 export PYTHONSTARTUP=~/.pyrc
@@ -90,6 +95,9 @@ if [[ $(uname) == "Darwin" ]]; then
 	if [ -d /opt/pkg/bin ]; then
 		export PATH="/opt/pkg/bin:$PATH"
 	fi
+	
+	#macOS seems to put useful things like ping and chown under /sbin or /usr/sbin...
+	export PATH="$PATH:/sbin:/usr/sbin"
 fi
 
 # Awesome Perlbrew
