@@ -105,6 +105,10 @@ if [ -f ~/perl5/perlbrew/etc/bashrc ]; then
         source ~/perl5/perlbrew/etc/bashrc
 fi
 
+if [ -d $HOME/.cargo/bin ]; then
+	export PATH="$PATH:$HOME/.cargo/bin"
+fi
+
 # Mostly I have scripts from nextcloud
 if [ -d $HOME/nextcloud/scripts ]; then
         export PATH="$HOME/nextcloud/scripts:$PATH"
