@@ -1,8 +1,13 @@
 #!/bin/sh
 
-#DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd ) # FROM http://stackoverflow.com/questions/59895/can-a-bash-script-tell-what-directory-its-stored-in
-
-DIR=$(dirname $(readlink -f "$0"))
+if ! echo $(uname) | grep -i BSD > /dev/null; then
+	# If we aren't on a *BSD then we'll use Bash to figure out where we are
+	DIR=$( bash -c 'cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd' ) 
+	# FROM http://stackoverflow.com/questions/59895/
+	#		can-a-bash-script-tell-what-directory-its-stored-in
+else
+	DIR=$(dirname $(readlink -f "$0"))
+fi
 
 for file in zshrc gitignore nexrc tmux.conf pyrc; do
 	if [ -e $HOME/.${file} ]; then
