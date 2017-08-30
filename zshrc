@@ -3,9 +3,9 @@
 #    Shell Prefs    #
 #####################
 # Set edditing and viewing preferences
-export EDITOR='vim'
+export EDITOR='nvi'
 export PAGER='less'
-export VISUAL='vim'
+export VISUAL='nvi'
 
 # Vi keys, what else?
 bindkey -v
@@ -67,7 +67,7 @@ setopt HIST_BEEP                # Beep if we go beyond top/bottom of history
 #      Aliases      #
 #####################
 alias more='less'
-alias vi='vim'
+alias vi='nvi'
 alias mkdir='mkdir -p'
 alias ls='ls -hF'
 
@@ -131,6 +131,24 @@ if [ -n "$SSH_CLIENT" ]; then
 fi
 
 #####################
+#        VIM       #
+#####################
+# I'm trying to move to nvi and away from vim. This should help revert my
+# muscle memory
+if ! type nvi; then
+	export EDITOR='vim'
+	export VISUAL='vim'
+	alias vi='vim'
+	alias nvi='vim'
+else
+	vim() {
+		echo "Please use nvi(1)"
+		sleep 5
+		nvi $*
+	}
+fi
+
+#####################
 #     LOCAL.RC      #
 #####################
 if [ -f "$HOME/.zshrclocal" ]; then
@@ -140,6 +158,9 @@ fi
 #####################
 #      History      #
 #####################
+
+# 30/08/2017
+# Trying to move to nvi. Added stuff to migrate from vim
 
 # 28/05/2017
 # Removed some PATH settings, and moved some others to zshrclocal
