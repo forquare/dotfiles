@@ -10,17 +10,6 @@ for file in zshrc gitignore vimrc vim tmux.conf pyrc; do
 	else
 		ln -sf $DIR/$file $HOME/.$file && echo ".$file installed"
 	fi
-
-	if [ "$file" = "bashrc" ] && [ $(uname) = "Darwin" ]; then
-		grep "source ~/.bashrc" ~/.profile > /dev/null
-		if [ $? != 0 ]; then
-			echo "    Sourcing .bashrc in .profile"
-			echo "source ~/.bashrc" >> ~/.profile
-		else
-			echo "    .bashrc already sourced in .profile"
-		fi
-	fi
-			
 done
 
 if [ $(uname) == "FreeBSD" ]; then
