@@ -4,7 +4,7 @@
 
 DIR=$(dirname $(readlink -f "$0"))
 
-for file in bashrc zshrc gitignore vimrc vim tmux.conf pyrc; do
+for file in zshrc gitignore vimrc vim tmux.conf pyrc; do
 	if [ -e $HOME/.${file} ]; then
 		echo ".$file found, doing nothing"
 	else
