@@ -135,7 +135,7 @@ fi
 #####################
 # I'm trying to move to nvi and away from vim. This should help revert my
 # muscle memory
-if ! type nvi; then
+if ! type nvi > /dev/null; then
 	export EDITOR='vim'
 	export VISUAL='vim'
 	alias vi='vim'
