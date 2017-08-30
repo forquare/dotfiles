@@ -1,27 +1,28 @@
 " Automatically indent new lines.
-autoindent on
+set autoindent
 "
 " Use extended regular expressions (EREs) rather than basic regular 
 " expressions (BREs).  See re_format(7) for more info.
-extended on
+set extended
 "
 " Ignore case differences in regular expressions.
-ignorecase on
+set ignorecase
 "
-" When turned off, all regular expression (not ^ and $) are treated as ordinary 
-" characters. Preceding individual characters by `\' re-enables them.
-magic on
+" When turned off, all regular expression (not ^ and $) are treated as 
+" ordinary characters. Preceding individual characters by `\' 
+" re-enables them.
+set magic
 "
 " Precede each line displayed with its current line number.
-number on
+set number
 "
 " Display a row/column ruler on the colon command line.
-ruler on
+set ruler
 "
 " Note the left matching characters when the right ones are inserted.
-" showmatch on
+set showmatch
 "
 " Display the current editor mode and a ``modified'' flag.
-showmode on
+set showmode
 "
 " 
