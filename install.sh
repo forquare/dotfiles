@@ -9,7 +9,7 @@ else
 	DIR=$(dirname $(readlink -f "$0"))
 fi
 
-for file in zshrc gitignore nexrc tmux.conf pyrc; do
+for file in zshrc gitignore vimrc vim tmux.conf pyrc; do
 	if [ -e $HOME/.${file} ]; then
 		echo ".$file found, doing nothing"
 	else
