@@ -86,16 +86,6 @@ if [[ $(uname) == "Darwin" ]]; then
                 export PATH="$PATH:/Library/Frameworks/Mono.framework/Versions/Current/bin"
         fi
 
-	# I keep homebrew in /opt
-        if [ -d /opt/homebrew/sbin ]; then
-                export PATH="/opt/homebrew/sbin:$PATH"
-        fi
-
-	# I've taken to using pkgsrc instead
-	if [ -d /opt/pkg/bin ]; then
-		export PATH="/opt/pkg/bin:$PATH"
-	fi
-	
 	#macOS seems to put useful things like ping and chown under /sbin or /usr/sbin...
 	export PATH="$PATH:/sbin:/usr/sbin"
 fi
@@ -120,6 +110,11 @@ fi
 # Sometimes I have binaries in my home dir
 if [ -d $HOME/bin ]; then
         export PATH="$HOME/bin:$PATH"
+fi
+
+# Make sure /usr/local/bin is at the forefront of PATH
+if [ -d /usr/local/bin ]; then
+	export PATH="/usr/local/bin:$PATH"
 fi
 
 #####################
