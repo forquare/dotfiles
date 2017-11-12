@@ -59,7 +59,7 @@ setopt HIST_IGNORE_DUPS         # No duplicate entries
 setopt HIST_SAVE_NO_DUPS        # No duplicate entries
 setopt HIST_REDUCE_BLANKS       # Don't save blank lines
 setopt EXTENDED_HISTORY         # Add timestamps to history
-setopt SHARE_HISTORY            # Share history between active shells
+###setopt SHARE_HISTORY         # Share history between active shells
 setopt HIST_BEEP                # Beep if we go beyond top/bottom of history
 [ $(uname) != "Linux" ] && setopt INC_APPEND_HISTORY_TIME  # Add history to file on execution (Linux doesn't like this)
 
