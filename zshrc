@@ -81,11 +81,6 @@ if [[ $(uname) == "Darwin" ]]; then
                 export PATH="$PATH:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin"
         fi
 
-	# Mono tools, mainly for CKAN (KSP)
-        if [ -d /Library/Frameworks/Mono.framework/Versions/Current/bin ]; then
-                export PATH="$PATH:/Library/Frameworks/Mono.framework/Versions/Current/bin"
-        fi
-
 	#macOS seems to put useful things like ping and chown under /sbin or /usr/sbin...
 	export PATH="$PATH:/sbin:/usr/sbin"
 fi
