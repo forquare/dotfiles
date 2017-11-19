@@ -70,6 +70,7 @@ alias more='less'
 alias vi='vim'
 alias mkdir='mkdir -p'
 alias ls='ls -hF'
+alias setgopath='export GOPATH=$(pwd)'
 
 #####################
 #   PATH Settings   #
