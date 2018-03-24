@@ -19,7 +19,7 @@ for file in zshrc gitignore vimrc vim tmux.conf pyrc; do
 done
 
 if [ $(uname) == "FreeBSD" ]; then
-	for file in xsession conkyrc; do
+	for file in xsession xscreensaver conkyrc; do
 		if [ ! -e $HOME/.${file} ]; then
 			ln -sf $DIR/$file $HOME/.$file && echo ".$file installed"
 			CHANGED=1
