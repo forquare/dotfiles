@@ -66,8 +66,14 @@ setopt HIST_BEEP                # Beep if we go beyond top/bottom of history
 #####################
 #      Aliases      #
 #####################
-alias more='less'
-alias vi='vim'
+if command -v less > /dev/null; then
+	alias more='less'
+fi
+if command -v vim > /dev/null; then
+	alias vi='vim'
+	alias view='vim -R'
+fi
+
 alias mkdir='mkdir -p'
 alias ls='ls -hF'
 alias setgopath='export GOPATH=$(pwd)'
