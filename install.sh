@@ -10,19 +10,17 @@ else
 fi
 
 for file in zshrc gitignore vimrc vim tmux.conf pyrc; do
-	if [ -e $HOME/.${file} ]; then
-		echo ".$file found, doing nothing"
-	else
+	if [ ! -e $HOME/.${file} ]; then
 		ln -sf $DIR/$file $HOME/.$file && echo ".$file installed"
 	fi
 done
 
 if [ $(uname) == "FreeBSD" ]; then
-	if [ -e $HOME/.xsession ]; then
-		echo ".xsession found, doing nothing"
-	else
-		ln -sf $DIR/xsession $HOME/.xsession && echo ".xsession installed"
-	fi
+	for file in xsession conkyrc; do
+		if [ ! -e $HOME/.${file} ]; then
+			ln -sf $DIR/$file $HOME/.$file && echo ".$file installed"
+		fi
+	done
 fi
 
 # gitconfig
