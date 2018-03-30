@@ -65,20 +65,10 @@ conky.config = {
 }
 
 conky.text = [[
-${color orange}$nodename${hr}$color
-${color grey}Uptime:$color $uptime
-${color grey}CPU Usage:$color $cpu%
-${cpubar 4}
-${color grey}RAM Usage:$color $mem/$memmax - $memperc% 
-${membar 4}
-${color grey}SWP Usage:$color $swap/$swapmax - $swapperc% 
-${swapbar 4}
-${color grey}DSK Usage:$color $fs_used/$fs_size - $fs_used_perc% 
-${fs_bar 4}
 ${color orange}Calendars${hr}$color
 ${execi 3600 sh -c "/home/bil/nextcloud/scripts/geek_desk/prev_month.sh"}
 ${execpi 900 cal_head=$(cal | head -1); cal_tail=$(cal -h | tail -7); today=$(date "+%e" | sed 's/ //g'); printf "$cal_head\n"; cale=$(printf "${cal_tail}" | sed -E "s/([ \t]|^)${today}([ \t]|$)/\1\${color red}${today}\${color}\2/"); printf "${cale}"}
 ${execi 3600 sh -c "/home/bil/nextcloud/scripts/geek_desk/next_month.sh"}
 ${color orange}Weather${hr}$color
-${execpi 300 sh -c "curl -s 'wttr.in/?0qT'"}
+${execpi 300 sh -c "curl -s 'wttr.in/barry?0qT'"}
 ]]
