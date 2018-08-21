@@ -12,9 +12,9 @@ else
 fi
 
 if [ -d https://github.com/gpakosz/.tmux.git ]; then
-	git -C $DIR/oh-my-tmux pull && echo ".tmux updated"
+	git -C $DIR/oh-my-tmux pull -q && echo ".tmux updated"
 else
-	git clone https://github.com/gpakosz/.tmux.git $DIR/oh-my-tmux && echo ".tmux cloned"
+	git clone https://github.com/gpakosz/.tmux.git $DIR/oh-my-tmux > /dev/null 2>&1 && echo ".tmux cloned"
 fi
 
 for file in zshrc gitignore vimrc vim tmux.conf.local pyrc ; do
