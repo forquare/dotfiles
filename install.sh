@@ -24,6 +24,16 @@ for file in zshrc gitignore vimrc vim tmux.conf.local pyrc ; do
 	fi
 done
 
+# This is for files inside directories
+for file in oh-my-tmux/tmux.conf ; do
+	_file=$(basename $file)
+	_dir=$(dirname $file)
+	if [ ! -e $HOME/.${_file} ]; then
+		ln -sf $DIR/$_dir/$_file $HOME/.$file && echo ".$file installed"
+		CHANGED=1
+	fi
+done
+
 if [ $(uname) == "FreeBSD" ]; then
 	for file in xsession xscreensaver conkyrc; do
 		if [ ! -e $HOME/.${file} ]; then
