@@ -11,7 +11,7 @@ else
 	DIR=$(dirname $(readlink -f "$0"))
 fi
 
-for file in zshrc gitignore vimrc vim tmux.conf pyrc; do
+for file in zshrc gitignore vimrc vim tmux.conf.local pyrc; do
 	if [ ! -e $HOME/.${file} ]; then
 		ln -sf $DIR/$file $HOME/.$file && echo ".$file installed"
 		CHANGED=1
