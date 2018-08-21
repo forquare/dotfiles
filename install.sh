@@ -11,7 +11,13 @@ else
 	DIR=$(dirname $(readlink -f "$0"))
 fi
 
-for file in zshrc gitignore vimrc vim tmux.conf.local pyrc; do
+if [ -d https://github.com/gpakosz/.tmux.git ]; then
+	git -C $DIR/oh-my-tmux pull && echo ".tmux updated"
+else
+	git clone https://github.com/gpakosz/.tmux.git $DIR/oh-my-tmux && echo ".tmux cloned"
+fi
+
+for file in zshrc gitignore vimrc vim tmux.conf.local pyrc ; do
 	if [ ! -e $HOME/.${file} ]; then
 		ln -sf $DIR/$file $HOME/.$file && echo ".$file installed"
 		CHANGED=1
