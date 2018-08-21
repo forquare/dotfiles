@@ -29,7 +29,7 @@ for file in oh-my-tmux/tmux.conf ; do
 	_file=$(basename $file)
 	_dir=$(dirname $file)
 	if [ ! -e $HOME/.${_file} ]; then
-		ln -sf $DIR/$_dir/$_file $HOME/.$file && echo ".$file installed"
+		ln -sf $DIR/$_dir/$_file $HOME/.$_file && echo ".$_file installed"
 		CHANGED=1
 	fi
 done
