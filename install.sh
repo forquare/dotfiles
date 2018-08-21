@@ -25,11 +25,18 @@ for file in zshrc gitignore vimrc vim tmux.conf.local pyrc ; do
 done
 
 # This is for files inside directories
-for file in oh-my-tmux/tmux.conf ; do
+for file in oh-my-tmux/.tmux.conf ; do
 	_file=$(basename $file)
 	_dir=$(dirname $file)
-	if [ ! -e $HOME/.${_file} ]; then
-		ln -sf $DIR/$_dir/$_file $HOME/.$_file && echo ".$_file installed"
+	
+	if echo ${_file} | grep '^\.' > /dev/null; then
+		PREFIX=''
+	else
+		PREFIX='.'
+	fi
+	
+	if [ ! -e $HOME/${PREFIX}${_file} ]; then
+		ln -sf $DIR/$_dir/$_file $HOME/${PREFIX}$_file && echo "${PREFIX}$_file installed"
 		CHANGED=1
 	fi
 done
