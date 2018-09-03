@@ -62,6 +62,7 @@ setopt EXTENDED_HISTORY         # Add timestamps to history
 ###setopt SHARE_HISTORY         # Share history between active shells
 setopt HIST_BEEP                # Beep if we go beyond top/bottom of history
 [ $(uname) != "Linux" ] && setopt INC_APPEND_HISTORY_TIME  # Add history to file on execution (Linux doesn't like this)
+alias history='fc -lni 0 -1'
 
 #####################
 #      Aliases      #
