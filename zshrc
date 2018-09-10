@@ -26,11 +26,29 @@ umask 0022
 # Set PS1 to user@host:$PWD %>
 export PROMPT="%F{cyan}%n@%m:%c %#>%f"
 
-# If we are root, chance the PS1 to red
+# If we are root, change the PS1 to red
 if [ $(id -u) -eq 0 ]; then
 	# Only happens if `sudo zsh`
 	export PROMPT="%F{red}%n@%m:%c %#>%f"
 fi
+
+# Set the Terminal title if using xterm
+case $TERM in
+	(*xterm*)
+
+	# Write some info to terminal title.
+	# This is seen when the shell prompts for input.
+	function precmd {
+	print -Pn "\e]0;%n@%m: %~\a"
+	}
+	# Write command and args to terminal title.
+	# This is seen while the shell waits for a command to complete.
+	function preexec {
+	printf "\033]0;%s\a" "$1"
+	}
+
+	;;
+esac
 
 # Correct spelling
 setopt CORRECT
