@@ -13,6 +13,9 @@ bindkey -v
 # Start a reverse search using ctrl+r
 bindkey '^R' history-incremental-search-backward
 
+# Make sure that the delete key actually deletes
+bindkey '\e[3~' delete-char
+
 # Using what is already on the current line, reverse search with up/down
 autoload -Uz history-search-end
 zle -N history-beginning-search-backward-end history-search-end
