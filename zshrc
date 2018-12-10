@@ -131,6 +131,11 @@ if [ -d $HOME/bin ]; then
         export PATH="$HOME/bin:$PATH"
 fi
 
+# Sometimes tools like pip will install to ~/.local/bin
+if [ -d $HOME/.local/bin ]; then
+	export $PATH="$HOME/.local/bin:$PATH"
+fi
+
 # Make sure /usr/local/bin is at the forefront of PATH
 if [ -d /usr/local/bin ]; then
 	export PATH="/usr/local/bin:$PATH"
