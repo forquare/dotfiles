@@ -67,8 +67,12 @@ setopt no_auto_remove_slash
 autoload edit-command-line; zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
-# Specify python rc file, to enable vi style editing and persistent history
-export PYTHONSTARTUP=~/.pyrc
+#####################
+#     LOCAL.RC      #
+#####################
+if [ -f "$HOME/.zshrclocal" ]; then
+	source "$HOME/.zshrclocal"
+fi
 
 #####################
 #   History Prefs   #
@@ -131,11 +135,6 @@ if [ -d $HOME/bin ]; then
         export PATH="$HOME/bin:$PATH"
 fi
 
-# Sometimes tools like pip will install to ~/.local/bin
-if [ -d $HOME/.local/bin ]; then
-	export PATH="$HOME/.local/bin:$PATH"
-fi
-
 # Make sure /usr/local/bin is at the forefront of PATH
 if [ -d /usr/local/bin ]; then
 	export PATH="/usr/local/bin:$PATH"
@@ -150,15 +149,35 @@ if [ -n "$SSH_CLIENT" ]; then
 fi
 
 #####################
-#     LOCAL.RC      #
+#   Python Prefs    #
 #####################
-if [ -f "$HOME/.zshrclocal" ]; then
-	source "$HOME/.zshrclocal"
-fi
+# Specify python rc file, to enable vi style editing and persistent history
+export PYTHONSTARTUP=~/.pyrc
+
+#####################
+#   Command Prefs   #
+#####################
+# ls colours for BSD ls
+# 'fb' f=foreground, b=background
+ls_dir='hx' #...........................light-grey default
+ls_sym='fx' #...........................magenta    default
+ls_sock='cx' #..........................green      default
+ls_pipe='dx' #..........................brown      default
+ls_exe='bx' #...........................red        default
+ls_blk='eg' #...........................blue       cyan
+ls_char='ed' #..........................blue       brown
+ls_setuid='ab' #........................black      red
+ls_setgid='ag' #........................black      cyan
+ls_dir_write_others_sticky='ac' #.......black      green
+ls_dir_write_others_no_sticky='ad' #....black      brown
+export LSCOLORS="${ls_dir}${ls_sym}${ls_sock}${ls_pipe}${ls_exe}${ls_blk}${ls_char}${ls_setuid}${ls_setgid}${ls_dir_write_others_sticky}${ls_dir_write_others_no_sticky}"
 
 #####################
 #      History      #
 #####################
+
+# 19/12/2018
+# Added LSCOLORS
 
 # 28/05/2017
 # Removed some PATH settings, and moved some others to zshrclocal
