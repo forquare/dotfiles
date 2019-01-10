@@ -11,7 +11,7 @@ else
 	DIR=$(dirname $(readlink -f "$0"))
 fi
 
-if [ -d https://github.com/gpakosz/.tmux.git ]; then
+if [ -d $DIR/oh-my-tmux ]; then
 	git -C $DIR/oh-my-tmux pull -q && echo ".tmux updated" && CHANGED=1
 else
 	git clone https://github.com/gpakosz/.tmux.git $DIR/oh-my-tmux > /dev/null 2>&1 && echo ".tmux cloned" && CHANGED=1
