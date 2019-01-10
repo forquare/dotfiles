@@ -172,6 +172,14 @@ ls_dir_write_others_sticky='ac' #.......black      green
 ls_dir_write_others_no_sticky='ad' #....black      brown
 export LSCOLORS="${ls_dir}${ls_sym}${ls_sock}${ls_pipe}${ls_exe}${ls_blk}${ls_char}${ls_setuid}${ls_setgid}${ls_dir_write_others_sticky}${ls_dir_write_others_no_sticky}"
 
+###########################
+# zsh-syntax-highlighting #
+###########################
+# This must be last:
+if [ -f $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then 
+	source $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
 #####################
 #      History      #
 #####################
