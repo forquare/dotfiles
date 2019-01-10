@@ -12,7 +12,7 @@ else
 fi
 
 if [ -d $DIR/oh-my-tmux ]; then
-	git -C $DIR/oh-my-tmux pull -q && echo ".tmux updated" && CHANGED=1
+	git -C $DIR/oh-my-tmux pull --stat | grep -q 'Already up to date.' || echo ".tmux updated" && CHANGED=1
 else
 	git clone https://github.com/gpakosz/.tmux.git $DIR/oh-my-tmux > /dev/null 2>&1 && echo ".tmux cloned" && CHANGED=1
 fi
