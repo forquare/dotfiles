@@ -29,7 +29,7 @@ else
 	git clone https://github.com/gpakosz/.tmux.git $DIR/oh-my-tmux > /dev/null 2>&1 && echo ".tmux cloned" && CHANGED=1
 fi
 
-for file in zshrc gitignore vimrc vim tmux.conf.local pyrc ; do
+for file in zshrc gitignore vimrc vim tmux.conf.local pyrc zsh-syntax-highlighting; do
 	if [ ! -e $HOME/.${file} ]; then
 		ln -sf $DIR/$file $HOME/.$file && echo ".$file installed"
 		CHANGED=1
