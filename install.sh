@@ -11,6 +11,15 @@ else
 	DIR=$(dirname $(readlink -f "$0"))
 fi
 
+if [ -d $DIR/zsh-syntax-highlighting ]; then
+	if ! git -C $DIR/zsh-syntax-highlighting pull --stat | grep -q 'Already up to date.'; then
+		echo ".zsh-syntax-highlighting updated"
+		CHANGED=1
+	fi
+else
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $DIR/zsh-syntax-highlighting > /dev/null 2>&1 && echo ".zsh-syntax-highlighting cloned" && CHANGED=1
+fi
+
 if [ -d $DIR/oh-my-tmux ]; then
 	if ! git -C $DIR/oh-my-tmux pull --stat | grep -q 'Already up to date.'; then
 		echo ".tmux updated"
