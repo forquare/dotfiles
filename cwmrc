@@ -5,11 +5,12 @@
 sticky yes
  
 # Any entry here is shown in the application menu 
-command term 	  "uxterm"
-command lock 	  "slock"
-command Browser	  firefox
-command Email	  thunderbird
-command Files	  lumina-fm
+command term		"uxterm"
+command lock		"slock"
+command Browser		firefox
+command Email		thunderbird
+command Files		lumina-fm
+command 1Password	"wine ~/.wine/drive_c/windows/command/start.exe /Unix ~/.wine/drive_c/ProgramData/Microsoft/Windows/Start\ Menu/Programs/1Password/1Password\ 4.lnk"
  
 # Autogroup definitions 
 autogroup 1 "xclock,XClock"
@@ -32,8 +33,6 @@ bind-key MS-3		window-movetogroup-3
 bind-key MS-4		window-movetogroup-4
 bind-key MS-5		window-movetogroup-5
 unbind-key 4-o 
-unbind-key CM-equal 
-unbind-key CMS-equal 
 
 #These normally move from one group to another - this unbinds them
 unbind-key M-Right
