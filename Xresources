@@ -1,3 +1,14 @@
 xterm*loginShell: true
 xterm*saveLines: 2000
-xterm*background: rgb:00/00/00
+xterm*background: black
+xterm*foreground: green
+
+XClock*foreground: #fbfbfb
+XClock*background: #000018
+XClock*update: 1
+XClock*geometry:          255x35-0+0
+XClock.Clock.majorColor:  rgba:f0/f0/19/7b
+XClock.Clock.minorColor:  rgba:a0/c0/f0/c0
+XClock.Clock.hourColor:   rgba:c9/66/11/72
+XClock.Clock.minuteColor: rgba:00/82/9f/72
+XClock.Clock.secondColor: rgba:50/93/30/6f
