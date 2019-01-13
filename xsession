@@ -8,5 +8,6 @@ dbus-update-activation-environment --all
 /usr/local/bin/gnome-keyring-daemon --start --components=pkcs11
 /usr/local/libexec/at-spi2-registryd --use-gnome-session
 
+/usr/local/bin/nextcloud --background &
 
 exec /usr/local/bin/cwm
