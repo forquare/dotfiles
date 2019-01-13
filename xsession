@@ -3,6 +3,8 @@
 
 setxkbmap gb
 
+xrdb -load .Xresources
+
 dbus-update-activation-environment --all
 /usr/local/bin/dbus-launch --sh-syntax --exit-with-session cwm
 /usr/local/bin/gnome-keyring-daemon --start --components=pkcs11
