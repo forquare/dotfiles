@@ -10,6 +10,10 @@ dbus-update-activation-environment --all
 /usr/local/bin/gnome-keyring-daemon --start --components=pkcs11
 /usr/local/libexec/at-spi2-registryd --use-gnome-session
 
+if [ -x /usr/local/bin/VBoxClient ]; then
+  /usr/local/bin/VBoxClient --clipboard
+fi
+
 #/usr/local/bin/nextcloud &
 
 exec /usr/local/bin/cwm
