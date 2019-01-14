@@ -22,6 +22,10 @@ if [ -x /usr/local/bin/VBoxClient ]; then
   /usr/local/bin/VBoxClient --clipboard
 fi
 
+if [ -x /usr/local/bin/xclock ]; then
+  /usr/local/bin/xclock -d
+fi
+
 #/usr/local/bin/nextcloud &
 
 exec /usr/local/bin/cwm
