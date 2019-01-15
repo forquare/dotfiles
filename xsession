@@ -23,7 +23,7 @@ if [ -f /usr/local/bin/VBoxClient ]; then
 fi
 
 if [ -f /usr/local/bin/feh ] && [ -d ~/nextcloud/Pictures/freebsd-backgrounds/Finals/ ]; then
-  /usr/local/bin/feh -z --bg-fill ~/nextcloud/Pictures/freebsd-backgrounds/Finals/
+  /usr/local/bin/feh -z --bg-fill ~/nextcloud/Pictures/freebsd-backgrounds/Finals/ &
 fi
 
 if [ -f /usr/local/bin/xclock ]; then
