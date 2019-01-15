@@ -54,7 +54,7 @@ for file in oh-my-tmux/.tmux.conf ; do
 done
 
 if [ $(uname) == "FreeBSD" ]; then
-	for file in xsession xscreensaver conkyrc cwmrc Xresources; do
+	for file in xsession xscreensaver conky.d cwmrc Xresources; do
 		if [ ! -e $HOME/.${file} ]; then
 			ln -sf $DIR/$file $HOME/.$file && echo ".$file installed"
 			CHANGED=1
