@@ -6,28 +6,28 @@ setxkbmap gb
 xrdb -load .Xresources
 
 if [ -f /usr/local/bin/dbus-update-activation-environment ]; then
-  /usr/local/bin/dbus-update-activation-environment --all &
-  /usr/local/bin/dbus-launch --sh-syntax --exit-with-session cwm &
+	/usr/local/bin/dbus-update-activation-environment --all &
+	/usr/local/bin/dbus-launch --sh-syntax --exit-with-session cwm &
 fi
 
 if [ -f /usr/local/bin/gnome-keyring-daemon ]; then
-  /usr/local/bin/gnome-keyring-daemon --start --components=pkcs11 &
+	/usr/local/bin/gnome-keyring-daemon --start --components=pkcs11 &
 fi
 
 if [ -f /usr/local/libexec/at-spi2-registryd ]; then
-  /usr/local/libexec/at-spi2-registryd --use-gnome-session &
+	/usr/local/libexec/at-spi2-registryd --use-gnome-session &
 fi
 
 if [ -f /usr/local/bin/VBoxClient ]; then
-  /usr/local/bin/VBoxClient --clipboard &
+	/usr/local/bin/VBoxClient --clipboard &
 fi
 
 if [ -f /usr/local/bin/feh ] && [ -d ~/nextcloud/Pictures/freebsd-backgrounds/Finals/ ]; then
-  /usr/local/bin/feh -z --bg-fill ~/nextcloud/Pictures/freebsd-backgrounds/Finals/ &
+	/usr/local/bin/feh -z --bg-fill ~/nextcloud/Pictures/freebsd-backgrounds/Finals/ &
 fi
 
 if [ -f /usr/local/bin/xclock ]; then
-  /usr/local/bin/xclock -d &
+	/usr/local/bin/xclock -d &
 fi
 
 if [ -f /usr/local/bin/conky ] && [ -d ~/.conky.d ]; then
