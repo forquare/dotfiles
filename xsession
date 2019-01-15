@@ -30,6 +30,12 @@ if [ -f /usr/local/bin/xclock ]; then
   /usr/local/bin/xclock -d &
 fi
 
+if [ -f /usr/local/bin/conky ] && [ -d ~/.conky.d ]; then
+	for E in ~/.conky.d/*; do
+		/usr/local/bin/conky -b -c ${E} &
+	done
+fi
+
 #/usr/local/bin/nextcloud &
 
 exec /usr/local/bin/cwm
