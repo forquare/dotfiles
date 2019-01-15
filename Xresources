@@ -2,10 +2,6 @@ xterm*loginShell: true
 xterm*saveLines: 2000
 xterm*background: black
 xterm*foreground: green
-XTerm.vt100.translations: #override \n\
-    Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
-    Ctrl Shift <Key>V: insert-selection(CLIPBOARD)
-
 
 ! For triple-click, select from current word, to end of line
 XTerm.vt100.cutNewLine: false
