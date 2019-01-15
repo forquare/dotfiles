@@ -1,12 +1,12 @@
-xterm*loginShell: true
-xterm*saveLines: 2000
-xterm*background: black
-xterm*foreground: green
+XTerm.vt100.loginShell: true
+XTerm.vt100.saveLines: 2000
+XTerm.vt100.background: black
+XTerm.vt100.foreground: green
 
 ! For triple-click, select from current word, to end of line
-XTerm*vt100.cutNewLine: false
-XTerm*vt100.cutToBeginningOfLine: false
-XTerm*vt100.charClass: 33:48,35:48,37:48,38:48,42:48,42-47:48,63:48,64:48,126:48,172:48
+XTerm.vt100.cutNewLine: false
+XTerm.vt100.cutToBeginningOfLine: false
+XTerm.vt100.charClass: 33:48,35:48,37:48,38:48,42:48,42-47:48,63:48,64:48,126:48,172:48
 ! Use character classes be part of selection.
 ! 48 ==standard alphanumeric selection
 ! 33:48 == make 33 act like 48
