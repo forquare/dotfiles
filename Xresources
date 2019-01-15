@@ -1,7 +1,7 @@
-XTerm.vt100.loginShell: true
-XTerm.vt100.saveLines: 2000
-XTerm.vt100.background: black
-XTerm.vt100.foreground: green
+xterm*loginShell: true
+xterm*saveLines: 2000
+xterm*background: black
+xterm*foreground: green
 
 ! For triple-click, select from current word, to end of line
 XTerm.vt100.cutNewLine: false
