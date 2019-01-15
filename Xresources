@@ -5,6 +5,8 @@ xterm*foreground: green
 
 XTerm*selectToClipboard: true
 
+xterm*termName: xterm-color
+
 ! For triple-click, select from current word, to end of line
 XTerm.vt100.cutNewLine: false
 XTerm.vt100.cutToBeginningOfLine: false
