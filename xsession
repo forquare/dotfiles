@@ -5,24 +5,24 @@ setxkbmap gb
 
 xrdb -load .Xresources
 
-if [ -x /usr/local/bin/dbus-update-activation-environment ]; then
+if [ -f /usr/local/bin/dbus-update-activation-environment ]; then
   /usr/local/bin/dbus-update-activation-environment --all
   /usr/local/bin/dbus-launch --sh-syntax --exit-with-session cwm
 fi
 
-if [ -x /usr/local/bin/gnome-keyring-daemon ]; then
+if [ -f /usr/local/bin/gnome-keyring-daemon ]; then
   /usr/local/bin/gnome-keyring-daemon --start --components=pkcs11
 fi
 
-if [ -x /usr/local/libexec/at-spi2-registryd ]; then
+if [ -f /usr/local/libexec/at-spi2-registryd ]; then
   /usr/local/libexec/at-spi2-registryd --use-gnome-session
 fi
 
-if [ -x /usr/local/bin/VBoxClient ]; then
+if [ -f /usr/local/bin/VBoxClient ]; then
   /usr/local/bin/VBoxClient --clipboard
 fi
 
-if [ -x /usr/local/bin/xclock ]; then
+if [ -f /usr/local/bin/xclock ]; then
   /usr/local/bin/xclock -d
 fi
 
