@@ -1,11 +1,14 @@
 xterm*loginShell: true
-xterm*saveLines: 2000
+xterm*saveLines: 100000
 xterm*background: black
 xterm*foreground: green
 
 XTerm*selectToClipboard: true
 
-xterm*termName: xterm-color
+XTerm.termName: xterm-256color
+UXTerm.termName: xterm-256color
+xterm*eightBitInput: false
+
 
 ! For triple-click, select from current word, to end of line
 XTerm.vt100.cutNewLine: false
@@ -33,3 +36,21 @@ XClock.Clock.minorColor:  rgba:a0/c0/f0/c0
 XClock.Clock.hourColor:   rgba:c9/66/11/72
 XClock.Clock.minuteColor: rgba:00/82/9f/72
 XClock.Clock.secondColor: rgba:50/93/30/6f
+
+
+
+! XTerm ------------------------------------------------
+XTerm*termName:                         xterm-256color
+XTerm*loginShell:                       true
+XTerm*activeIcon:                       false
+XTerm*faceName:                         DejaVu Sans Mono:size=9
+XTerm*font:                             -b&h-lucida-medium-r-normal-sans-12-*-*-*-*-*-*
+XTerm*visualBell:                       true
+XTerm*charClass:                        33:48,35:48,37:48,42:48,45-47:48,64:48,95:48,126:48
+! disable alt+enter, use F11 to toggle fullscreen
+! and use ctrl+shift+c/ctrl+shift+v to copy/paste
+XTerm*VT100*translations:    #override \
+        Alt <Key>Return: ignore() \n\
+        <Key>F11: fullscreen(toggle) \n\
+        Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+        Ctrl Shift <Key>V: insert-selection(CLIPBOARD)
