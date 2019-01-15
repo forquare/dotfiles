@@ -5,11 +5,6 @@ xterm*foreground: green
 
 XTerm*selectToClipboard: true
 
-XTerm.termName: xterm-256color
-UXTerm.termName: xterm-256color
-xterm*eightBitInput: false
-
-
 ! For triple-click, select from current word, to end of line
 XTerm.vt100.cutNewLine: false
 XTerm.vt100.cutToBeginningOfLine: false
@@ -43,10 +38,7 @@ XClock.Clock.secondColor: rgba:50/93/30/6f
 XTerm*termName:                         xterm-256color
 XTerm*loginShell:                       true
 XTerm*activeIcon:                       false
-XTerm*faceName:                         DejaVu Sans Mono:size=9
-XTerm*font:                             -b&h-lucida-medium-r-normal-sans-12-*-*-*-*-*-*
 XTerm*visualBell:                       true
-XTerm*charClass:                        33:48,35:48,37:48,42:48,45-47:48,64:48,95:48,126:48
 ! disable alt+enter, use F11 to toggle fullscreen
 ! and use ctrl+shift+c/ctrl+shift+v to copy/paste
 XTerm*VT100*translations:    #override \
