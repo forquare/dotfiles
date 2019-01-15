@@ -22,6 +22,10 @@ if [ -f /usr/local/bin/VBoxClient ]; then
   /usr/local/bin/VBoxClient --clipboard &
 fi
 
+if [ -f /usr/local/bin/feh ] && [ -d ~/nextcloud/Pictures/freebsd-backgrounds/Finals/ ]; then
+  /usr/local/bin/feh -z --bg-fill ~/nextcloud/Pictures/freebsd-backgrounds/Finals/
+fi
+
 if [ -f /usr/local/bin/xclock ]; then
   /usr/local/bin/xclock -d &
 fi
