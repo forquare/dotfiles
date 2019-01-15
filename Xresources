@@ -3,12 +3,12 @@ xterm*saveLines: 100000
 xterm*background: black
 xterm*foreground: green
 
-XTerm*selectToClipboard: true
+*VT100.selectToClipboard: true
 
 ! For triple-click, select from current word, to end of line
-XTerm.vt100.cutNewLine: false
-XTerm.vt100.cutToBeginningOfLine: false
-XTerm.vt100.charClass: 33:48,35:48,37:48,38:48,42:48,42-47:48,63:48,64:48,126:48,172:48
+*VT100.cutNewLine: false
+*VT100.cutToBeginningOfLine: false
+*VT100.charClass: 33:48,35:48,37:48,38:48,42:48,42-47:48,63:48,64:48,126:48,172:48
 ! Use character classes be part of selection.
 ! 48 ==standard alphanumeric selection
 ! 33:48 == make 33 act like 48
@@ -25,7 +25,7 @@ XTerm.vt100.charClass: 33:48,35:48,37:48,38:48,42:48,42-47:48,63:48,64:48,126:48
 XClock*foreground: #fbfbfb
 XClock*background: #000018
 XClock*update: 1
-XClock*geometry:          230x35-0+0
+XClock*geometry:          230x30-0+0
 XClock.Clock.majorColor:  rgba:f0/f0/19/7b
 XClock.Clock.minorColor:  rgba:a0/c0/f0/c0
 XClock.Clock.hourColor:   rgba:c9/66/11/72
@@ -35,13 +35,11 @@ XClock.Clock.secondColor: rgba:50/93/30/6f
 
 
 ! XTerm ------------------------------------------------
-XTerm*termName:                         xterm-256color
-XTerm*loginShell:                       true
-XTerm*activeIcon:                       false
-XTerm*visualBell:                       true
+XTerm*termName:                    xterm-256color
+*visualBell:                       true
 ! disable alt+enter, use F11 to toggle fullscreen
 ! and use ctrl+shift+c/ctrl+shift+v to copy/paste
-XTerm*VT100*translations:    #override \
+*VT100*translations:    #override \
         Alt <Key>Return: ignore() \n\
         <Key>F11: fullscreen(toggle) \n\
         Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
