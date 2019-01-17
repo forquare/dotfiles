@@ -3,6 +3,8 @@ xterm*saveLines: 100000
 xterm*background: black
 xterm*foreground: green
 
+Xcursor.theme: whiteglass
+
 *VT100.selectToClipboard: true
 
 ! For triple-click, select from current word, to end of line
