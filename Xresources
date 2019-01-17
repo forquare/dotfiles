@@ -37,6 +37,8 @@ XClock.Clock.secondColor: rgba:50/93/30/6f
 ! XTerm ------------------------------------------------
 XTerm*termName:                    xterm-256color
 *visualBell:                       true
+*scrollBar:                        true
+*rightScrollBar:                   true
 ! disable alt+enter, use F11 to toggle fullscreen
 ! and use ctrl+shift+c/ctrl+shift+v to copy/paste
 *VT100*translations:    #override \
