@@ -11,11 +11,7 @@ if [ -f /usr/local/bin/dbus-update-activation-environment ]; then
 fi
 
 if [ -f /usr/local/bin/gnome-keyring-daemon ]; then
-	/usr/local/bin/gnome-keyring-daemon --start --components=pkcs11 &
-fi
-
-if [ -f /usr/local/libexec/at-spi2-registryd ]; then
-	/usr/local/libexec/at-spi2-registryd --use-gnome-session &
+	eval export $(/usr/local/bin/gnome-keyring-daemon --start --components=pkcs11,secrets) &
 fi
 
 if [ -f /usr/local/bin/VBoxClient ]; then
