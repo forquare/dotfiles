@@ -6,7 +6,7 @@ setxkbmap gb
 xrdb -load .Xresources
 
 if [ -f /usr/local/bin/dbus-update-activation-environment ]; then
-	/usr/local/bin/dbus-update-activation-environment --all &
+	/usr/local/bin/dbus-update-activation-environment --all $DISPLAY &
 	/usr/local/bin/dbus-launch --sh-syntax --exit-with-session cwm &
 fi
 
