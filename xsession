@@ -32,6 +32,6 @@ if [ -f /usr/local/bin/conky ] && [ -d ~/.conky.d ]; then
 	done
 fi
 
-#/usr/local/bin/nextcloud &
+/usr/local/bin/nextcloud &
 
 exec /usr/local/bin/cwm
