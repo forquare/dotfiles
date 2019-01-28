@@ -34,8 +34,8 @@ fi
 
 /usr/local/bin/nextcloud &
 
-if ping -c 1 -t 5 bil-desktop; then
-	autossh -M 0 -N -L 4242:localhost:4242 bil@bil-desktop &
-fi
+#if ping -c 1 -t 5 bil-desktop; then
+#	autossh -M 0 -N -L 4242:localhost:4242 bil@bil-desktop &
+#fi
 
 exec /usr/local/bin/cwm
