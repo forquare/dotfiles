@@ -6,17 +6,19 @@ setxkbmap gb
 
 xrdb -load .Xresources
 
-if [ -f /usr/local/bin/dbus-update-activation-environment ]; then
-	/usr/local/bin/dbus-update-activation-environment --all &
-	/usr/local/bin/dbus-launch --sh-syntax --exit-with-session cwm &
-fi
-
-if [ -f /usr/local/bin/gnome-keyring-daemon ]; then
-	eval export $(/usr/local/bin/gnome-keyring-daemon --start --components=pkcs11,secrets) &
-fi
+/usr/local/libexec/at-spi-bus-launcher &
+/usr/local/libexec/at-spi2-registryd --use-gnome-session &
+/usr/local/bin/dbus-update-activation-environment --all &
+echo ${DBUS_SESSION_BUS_ADDRESS}
+eval $(/usr/local/bin/gnome-keyring-daemon --start --components=pkcs11,secrets)
+export GNOME_KEYRING_CONTROL
+echo ${GNOME_KEYRING_CONTROL}
 
 if [ -f /usr/local/bin/VBoxClient ]; then
 	/usr/local/bin/VBoxClient --clipboard &
+	/usr/local/bin/VBoxClient --display &
+	/usr/local/bin/VBoxClient --seamless &
+	/usr/local/bin/VBoxClient --draganddrop &
 fi
 
 if [ -f /usr/local/bin/feh ] && [ -d ~/nextcloud/Pictures/freebsd-backgrounds/Finals/ ]; then
@@ -33,10 +35,10 @@ if [ -f /usr/local/bin/conky ] && [ -d ~/.conky.d ]; then
 	done
 fi
 
-/usr/local/bin/nextcloud &
+(sleep 10 && /usr/local/bin/nextcloud &)
 
 #if ping -c 1 -t 5 bil-desktop; then
 #	autossh -M 0 -N -L 4242:localhost:4242 bil@bil-desktop &
 #fi
 
-exec /usr/local/bin/cwm
+/usr/local/bin/dbus-launch --sh-syntax --exit-with-session cwm
