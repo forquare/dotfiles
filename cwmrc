@@ -7,10 +7,9 @@ sticky yes
 # Any entry here is shown in the application menu 
 command term		"uxterm"
 command lock		"slock"
-command Browser		firefox
-command Email		thunderbird
+command Firefox		firefox
+command Thunderbird	thunderbird
 command Files		lumina-fm
-command 1Password	"wine ~/.wine/drive_c/windows/command/start.exe /Unix ~/.wine/drive_c/ProgramData/Microsoft/Windows/Start\ Menu/Programs/1Password/1Password\ 4.lnk"
  
 # Autogroup definitions 
 autogroup 1 "xclock,XClock"
