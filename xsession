@@ -25,7 +25,7 @@ if [ -f /usr/local/bin/VBoxClient ]; then
 	/usr/local/bin/VBoxClient --display &
 	/usr/local/bin/VBoxClient --seamless &
 	/usr/local/bin/VBoxClient --draganddrop &
-	start_sleep=5
+	start_sleep=2
 fi
 
 if [ -f /usr/local/bin/feh ] && [ -d ~/nextcloud/Pictures/freebsd-backgrounds/Finals/ ]; then
