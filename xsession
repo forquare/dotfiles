@@ -4,6 +4,8 @@
 set -x
 setxkbmap gb
 
+start_sleep=0
+
 xrdb -load .Xresources
 
 if which cwm >/dev/null 2>&1 ; then
@@ -23,19 +25,20 @@ if [ -f /usr/local/bin/VBoxClient ]; then
 	/usr/local/bin/VBoxClient --display &
 	/usr/local/bin/VBoxClient --seamless &
 	/usr/local/bin/VBoxClient --draganddrop &
+	start_sleep=5
 fi
 
 if [ -f /usr/local/bin/feh ] && [ -d ~/nextcloud/Pictures/freebsd-backgrounds/Finals/ ]; then
-	/usr/local/bin/feh -z --bg-fill ~/nextcloud/Pictures/freebsd-backgrounds/Finals/ &
+	(sleep ${start_sleep} && /usr/local/bin/feh -z --bg-fill ~/nextcloud/Pictures/freebsd-backgrounds/Finals/ &)
 fi
 
 if [ -f /usr/local/bin/xclock ]; then
-	/usr/local/bin/xclock -d &
+	(sleep ${start_sleep} && /usr/local/bin/xclock -d &)
 fi
 
 if [ -f /usr/local/bin/conky ] && [ -d ~/.conky.d ]; then
 	for E in ~/.conky.d/*; do
-		/usr/local/bin/conky -b -c ${E} &
+		(sleep ${start_sleep} && /usr/local/bin/conky -b -c ${E} &)
 	done
 fi
 
