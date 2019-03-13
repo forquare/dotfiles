@@ -10,7 +10,7 @@ command lock		"slock"
 command Firefox		firefox
 command Thunderbird	thunderbird
 command Files		lumina-fm
-command Shutdown		shutdown -p now
+command Shutdown	shutdown -p now
 command Reboot		shutdown -r now
  
 # Autogroup definitions 
