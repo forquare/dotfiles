@@ -11,7 +11,7 @@ command Firefox		firefox
 command Thunderbird	thunderbird
 command Files		lumina-fm
 command Shutdown		shutdown -p now
-command Reboot		reboot
+command Reboot		shutdown -r now
  
 # Autogroup definitions 
 autogroup 1 "xclock,XClock"
