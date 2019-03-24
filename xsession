@@ -43,6 +43,7 @@ if [ -f /usr/local/bin/conky ] && [ -d ~/.conky.d ]; then
 fi
 
 #(sleep 10 && /usr/local/bin/nextcloud &)
+dbus-launch --exit-with-session /usr/local/bin/nextcloud &
 
 #if ping -c 1 -t 5 bil-desktop; then
 #	autossh -M 0 -N -L 4242:localhost:4242 bil@bil-desktop &
