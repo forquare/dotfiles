@@ -42,8 +42,8 @@ if [ -f /usr/local/bin/conky ] && [ -d ~/.conky.d ]; then
 	done
 fi
 
-if which /usr/local/bin/nextcloud >/dev/null 2>&1; then
-	dbus-launch --exit-with-session /usr/local/bin/nextcloud &
+if which nextcloud >/dev/null 2>&1; then
+	dbus-launch --exit-with-session nextcloud &
 fi
 
 #if ping -c 1 -t 5 bil-desktop; then
