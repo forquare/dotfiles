@@ -10,7 +10,7 @@ Xcursor.theme: whiteglass
 ! For triple-click, select from current word, to end of line
 *VT100.cutNewLine: false
 *VT100.cutToBeginningOfLine: false
-*VT100.charClass: 33:48,35:48,37:48,38:48,42:48,42-47:48,63:48,64:48,126:48,172:48
+*VT100.charClass: 33:48,35:48,37:48,38:48,43:48,45-47:48,63:48,64:48,126:48,172:48
 ! Use character classes be part of selection.
 ! 48 ==standard alphanumeric selection
 ! 33:48 == make 33 act like 48
