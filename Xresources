@@ -18,11 +18,15 @@ Xcursor.theme: whiteglass
 ! 35 = #
 ! 37 = %
 ! 38 = &
-! 42-47 = * + , - . /
+! 43 = +
+! 45-47 = - . /
 ! 63 = ?
 ! 64 = @
 ! 126 = ~
 ! 172 = _
+! Ignore:
+! 42 = *
+! 44 = ,
 
 XClock*foreground: #fbfbfb
 XClock*background: #000018
