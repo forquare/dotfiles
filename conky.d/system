@@ -69,4 +69,11 @@ conky.text = [[
 ${color orange}System${hr}$color
 Battery ${battery_percent}/100 (${battery_time})
 ${battery_bar}
+CPU ${cpu}/100
+${cpubar}
+Memory ${memperc}/100
+ Free ${memeasyfree}
+ Used ${mem}
+ Total ${memmax}
+${membar}
 ]]
