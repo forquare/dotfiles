@@ -103,6 +103,7 @@ fi
 alias mkdir='mkdir -p'
 alias ls='ls -hF'
 alias setgopath='export GOPATH=$(pwd)'
+alias clsb="printf '\033\143'" # Clear scrollback
 
 #####################
 #   PATH Settings   #
