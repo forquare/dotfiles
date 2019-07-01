@@ -99,7 +99,7 @@ if command -v vim > /dev/null; then
 	alias vi='vim'
 	alias view='vim -R'
 fi
-
+alias ncurl='curl -v -o /dev/null'
 alias mkdir='mkdir -p'
 alias ls='ls -hF'
 alias setgopath='export GOPATH=$(pwd)'
