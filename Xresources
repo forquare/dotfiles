@@ -2,6 +2,7 @@ xterm*loginShell: true
 xterm*saveLines: 100000
 xterm*background: black
 xterm*foreground: green
+xterm*vt100*geometry: 80x40
 
 Xcursor.theme: whiteglass
 
@@ -43,8 +44,10 @@ XClock.Clock.secondColor: rgba:50/93/30/6f
 ! XTerm ------------------------------------------------
 XTerm*termName:                    xterm-256color
 *visualBell:                       true
-*scrollBar:                        true
-*rightScrollBar:                   true
+*scrollBar:                        false
+*rightScrollBar:                   false
+! USE SHIFT+PgUp/Down
+
 ! disable alt+enter, use F11 to toggle fullscreen
 ! and use ctrl+shift+c/ctrl+shift+v to copy/paste
 *VT100*translations:    #override \
