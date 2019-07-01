@@ -2,7 +2,7 @@ xterm*loginShell: true
 xterm*saveLines: 100000
 xterm*background: black
 xterm*foreground: green
-xterm*vt100*geometry: 80x40
+xterm*vt100*geometry: 80x24
 
 Xcursor.theme: whiteglass
 
