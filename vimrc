@@ -8,9 +8,6 @@ filetype indent on
 " Set to auto read when a file is changed from the outside
 set autoread
 
-" Always show current position
-set ruler
-
 " Ignore case when searching
 set ignorecase
 
@@ -46,6 +43,9 @@ set si "Smart indent
 set wrap "Wrap lines
 set paste
 set number
+
+" Always show current position
+set ruler
 
 " Pressing ,ss will toggle and untoggle spell checking
 map <leader>ss :setlocal spell!<cr>
