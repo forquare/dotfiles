@@ -7,6 +7,8 @@ export EDITOR='vim'
 export PAGER='less'
 export VISUAL='vim'
 
+export LESS='-X' # Don't send termcap initialization and deinitialization strings to the terminal
+
 # Vi keys, what else?
 bindkey -v
 
