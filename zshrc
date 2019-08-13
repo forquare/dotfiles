@@ -101,6 +101,9 @@ if command -v vim > /dev/null; then
 	alias vi='vim'
 	alias view='vim -R'
 fi
+if command -v git > /dev/null; then
+	alias git='git --no-pager'
+fi
 alias ncurl='curl -v -o /dev/null'
 alias mkdir='mkdir -p'
 alias ls='ls -hF'
