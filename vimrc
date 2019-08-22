@@ -68,3 +68,17 @@ nnoremap <C-H> <C-W><C-H>
 
 " Don't send termcap initialization and deinitialization strings to the terminal
 set t_ti= t_te=
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'mrk21/yaml-vim'
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on

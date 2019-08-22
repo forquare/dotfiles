@@ -20,6 +20,15 @@ else
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $DIR/zsh-syntax-highlighting > /dev/null 2>&1 && echo ".zsh-syntax-highlighting cloned" && CHANGED=1
 fi
 
+if [ -d $DIR/vim/bundle/Vundle.vim ]; then
+	if ! git -C $DIR/vim/bundle/Vundle.vim pull --stat 2>&1 | grep -q 'Already up to date.'; then
+		echo "vundle updated"
+		CHANGED=1
+	fi
+else
+	git clone https://github.com/VundleVim/Vundle.vim.git $DIR/vim/bundle/Vundle.vim > /dev/null 2>&1 && echo "vundle cloned" && CHANGED=1
+fi
+
 if [ -d $DIR/oh-my-tmux ]; then
 	if ! git -C $DIR/oh-my-tmux pull --stat 2>&1 | grep -q 'Already up to date.'; then
 		echo ".tmux updated"
