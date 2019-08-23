@@ -29,6 +29,10 @@ else
 	git clone https://github.com/VundleVim/Vundle.vim.git $DIR/vim/bundle/Vundle.vim > /dev/null 2>&1 && echo "vundle cloned" && CHANGED=1
 fi
 
+vim +PluginInstall +qa > /dev/null 2>&1
+vim +PluginUpdate +qa > /dev/null 2>&1
+vim +PluginClean! +qa > /dev/null 2>&1
+
 if [ -d $DIR/oh-my-tmux ]; then
 	if ! git -C $DIR/oh-my-tmux pull --stat 2>&1 | grep -q 'Already up to date.'; then
 		echo ".tmux updated"
