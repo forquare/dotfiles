@@ -77,6 +77,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'mrk21/yaml-vim'
+Plugin 'martinda/Jenkinsfile-vim-syntax'
+Plugin 'modille/groovy.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
