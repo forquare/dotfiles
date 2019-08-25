@@ -8,9 +8,6 @@ filetype indent on
 " Set to auto read when a file is changed from the outside
 set autoread
 
-" Always show current position
-set ruler
-
 " Ignore case when searching
 set ignorecase
 
@@ -47,6 +44,9 @@ set wrap "Wrap lines
 set paste
 set number
 
+" Always show current position
+set ruler
+
 " Pressing ,ss will toggle and untoggle spell checking
 map <leader>ss :setlocal spell!<cr>
 
@@ -65,3 +65,22 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" Don't send termcap initialization and deinitialization strings to the terminal
+set t_ti= t_te=
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'mrk21/yaml-vim'
+Plugin 'martinda/Jenkinsfile-vim-syntax'
+Plugin 'modille/groovy.vim'
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on

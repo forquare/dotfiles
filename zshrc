@@ -7,6 +7,8 @@ export EDITOR='vim'
 export PAGER='less'
 export VISUAL='vim'
 
+export LESS='-X' # Don't send termcap initialization and deinitialization strings to the terminal
+
 # Vi keys, what else?
 bindkey -v
 
@@ -99,6 +101,9 @@ fi
 if command -v vim > /dev/null; then
 	alias vi='vim'
 	alias view='vim -R'
+fi
+if command -v git > /dev/null; then
+	alias git='git --no-pager'
 fi
 alias ncurl='curl -v -o /dev/null'
 alias mkdir='mkdir -p'
