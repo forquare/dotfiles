@@ -82,8 +82,9 @@ export HISTSIZE=1000            # Internal size
 export SAVEHIST=10000           # File size
 setopt HIST_IGNORE_DUPS         # No duplicate entries
 setopt HIST_SAVE_NO_DUPS        # No duplicate entries
-setopt HIST_REDUCE_BLANKS       # Don't save blank lines
+setopt HIST_REDUCE_BLANKS       # Do not save blank lines
 setopt EXTENDED_HISTORY         # Add timestamps to history
+setopt HIST_IGNORE_SPACE        # Do not save lines preceeded with a space
 ###setopt SHARE_HISTORY         # Share history between active shells
 setopt HIST_BEEP                # Beep if we go beyond top/bottom of history
 [ $(uname) != "Linux" ] && setopt INC_APPEND_HISTORY_TIME  # Add history to file on execution (Linux doesn't like this)
