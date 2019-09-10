@@ -110,6 +110,7 @@ alias mkdir='mkdir -p'
 alias ls='ls -hF'
 alias setgopath='export GOPATH=$(pwd)'
 alias clsb="printf '\033\143'" # Clear scrollback
+alias jsonformat="python -m json.tool"
 
 #####################
 #   PATH Settings   #
