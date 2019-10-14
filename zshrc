@@ -105,11 +105,6 @@ fi
 if command -v git > /dev/null; then
 	alias git='git --no-pager'
 fi
-if command -v docker > /dev/null; then
-	alias docker-killall="docker stop $(docker ps -a -q)"
-	alias docker-rm="docker rm $(docker ps -a -q)"
-	alias docker-rmi="docker rmi $(docker images -q)"
-fi
 
 alias ncurl='curl -v -o /dev/null'
 alias mkdir='mkdir -p'
@@ -167,6 +162,26 @@ fi
 #####################
 # Specify python rc file, to enable vi style editing and persistent history
 export PYTHONSTARTUP=~/.pyrc
+
+#####################
+#   Docker help     #
+#####################
+if command -v docker > /dev/null; then
+	dockerstop(){
+		docker stop $(docker ps -a -q)
+	}
+	dockerrm(){
+		docker rm $(docker ps -a -q)
+	}
+	dockerrmi(){
+		docker rmi $(docker images -q)
+	}
+	killdocker(){
+		dockerstop
+		dockerrm
+		dockerrmi
+	}
+fi
 
 #####################
 #   Command Prefs   #
