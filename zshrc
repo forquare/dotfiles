@@ -105,6 +105,12 @@ fi
 if command -v git > /dev/null; then
 	alias git='git --no-pager'
 fi
+if command -v docker > /dev/null; then
+	alias docker-killall="docker stop $(docker ps -a -q)"
+	alias docker-rm="docker rm $(docker ps -a -q)"
+	alias docker-rmi="docker rmi $(docker images -q)"
+fi
+
 alias ncurl='curl -v -o /dev/null'
 alias mkdir='mkdir -p'
 alias ls='ls -hF'
