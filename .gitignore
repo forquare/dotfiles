@@ -1,3 +1,5 @@
 oh-my-tmux
 vim/bundle/*/
 zsh-syntax-highlighting
+.netrwhist
+.DS_Store
