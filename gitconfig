@@ -29,4 +29,5 @@
   user = GITHUB
 [push]
   default = current
-
+[merge]
+	tool = vimdiff
