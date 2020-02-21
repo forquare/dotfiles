@@ -173,10 +173,10 @@ if command -v docker > /dev/null; then
 		docker stop $(docker ps -a -q)
 	}
 	dockerrm(){
-		docker rm $(docker ps -a -q)
+		docker rm -f $(docker ps -a -q)
 	}
 	dockerrmi(){
-		docker rmi $(docker images -q)
+		docker rmi -f $(docker images -q)
 	}
 	killdocker(){
 		dockerstop
