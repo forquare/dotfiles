@@ -185,6 +185,17 @@ if command -v docker > /dev/null; then
 	}
 fi
 
+
+#####################
+#   rmssh           #
+#####################
+rmssh(){
+	for EACH in $@; do
+		cat ~/.ssh/known_hosts | grep -v $EACH > ~/.ssh/temp_known_hosts
+		mv ~/.ssh/temp_known_hosts ~/.ssh/known_hosts
+	done
+}
+
 #####################
 #   Command Prefs   #
 #####################
