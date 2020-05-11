@@ -24,6 +24,10 @@ zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
 bindkey "^[[A" history-beginning-search-backward-end
 bindkey "^[[B" history-beginning-search-forward-end
+if [ $(uname) = "Linux" ]; then
+	bindkey "^[OA" history-beginning-search-backward-end
+	bindkey "^[OB" history-beginning-search-forward-end
+fi
 
 # 755 for directories, 644 for files
 umask 0022
@@ -110,7 +114,7 @@ fi
 
 alias ncurl='curl -v -o /dev/null'
 alias mkdir='mkdir -p'
-alias ls='ls -hF'
+[ $(uname) = "Linux" ] && alias ls='ls -hF --color' || alias ls='ls -hF'
 alias setgopath='export GOPATH=$(pwd)'
 alias clsb="printf '\033\143'" # Clear scrollback
 alias jsonformat="python -m json.tool"
@@ -215,6 +219,9 @@ ls_dir_write_others_no_sticky='ad' #....black      brown
 export LSCOLORS="${ls_dir}${ls_sym}${ls_sock}${ls_pipe}${ls_exe}${ls_blk}${ls_char}${ls_setuid}${ls_setgid}${ls_dir_write_others_sticky}${ls_dir_write_others_no_sticky}"
 export CLICOLOR=yes
 
+# ls colours for GNU
+export LS_COLORS='di=37:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'
+
 ###########################
 # zsh-syntax-highlighting #
 ###########################
@@ -226,6 +233,9 @@ fi
 #####################
 #      History      #
 #####################
+
+# 07/05/2020
+# Made somewhat Linux friendly
 
 # 19/12/2018
 # Added LSCOLORS
