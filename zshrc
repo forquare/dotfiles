@@ -119,22 +119,6 @@ alias setgopath='export GOPATH=$(pwd)'
 alias clsb="printf '\033\143'" # Clear scrollback
 alias jsonformat="python -m json.tool"
 
-dirhash(){                 
-	if [ $# -gt 1 ]; then
-		for E in $*; do
-		dirhash ${E}
-	done
-	return 0
-	fi
-	if [ ! -d $1 ]; then
-		return 1
-	fi
-	cd $1
-	hash=$(find . -type f -exec sha256sum {} + | awk '{print $2, "\t", $1}' | sort | sha256sum | awk '{print $1}')
-	printf "%s\t%s\n" $1 $hash
-	cd - > /dev/null
-}
-
 #####################
 #   PATH Settings   #
 #####################
@@ -205,7 +189,6 @@ if command -v docker > /dev/null; then
 	}
 fi
 
-
 #####################
 #   rmssh           #
 #####################
@@ -215,6 +198,33 @@ rmssh(){
 		mv ~/.ssh/temp_known_hosts ~/.ssh/known_hosts
 	done
 }
+
+#####################
+#   dirhash         #
+#####################
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+dirhash(){                 
+	if [ $# -gt 1 ]; then
+		for E in $*; do
+		dirhash ${E}
+	done
+	return 0
+	fi
+	if [ ! -d $1 ]; then
+		return 1
+	fi
+	cd $1
+	hash=$(find . -type f -exec sha256sum {} + | awk '{print $2, "\t", $1}' | sort | sha256sum | awk '{print $1}')
+	printf "%s\t%s\n" $1 $hash
+	cd - > /dev/null
+}
+
+#####################
+#   TILIX           #
+#####################
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte.sh
+fi
 
 #####################
 #   Command Prefs   #
