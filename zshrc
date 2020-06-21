@@ -202,7 +202,6 @@ rmssh(){
 #####################
 #   dirhash         #
 #####################
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
 dirhash(){                 
 	if [ $# -gt 1 ]; then
 		for E in $*; do
