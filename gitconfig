@@ -1,33 +1,26 @@
 [user]
-  name = NAME
-  email = EMAIL
+	name = NAME
+	email = EMAIL
 [alias]
-  co = checkout
-  ci = commit
-  st = status
-  br = branch
-  di = diff
-  dc = diff --cached
-  amend = commit --ammend
-  aa = add --all
-  lg = log --no-merges
-  log-merges = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-  #hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-  #type = cat-file -t
-  #dump = cat-file -p
+	co = checkout
+	amend = commit --ammend
+	cane = commit --amend --no-edit
+	history = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --max-count=14
 [color]
-  diff = auto
-  status = auto
-  branch = auto
+	diff = auto
+	status = auto
+	branch = auto
 [core]
-  excludesfile = HOME/.gitignore
-  autocrlf = input
-  editor = vim
+	excludesfile = HOME/.gitignore
+	autocrlf = input
+	editor = vim
 [format]
-  pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset
+	pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset
 [github]
-  user = GITHUB
+	user = GITHUB
 [push]
-  default = current
+	default = current
 [merge]
 	tool = vimdiff
+[pull]
+	ff = only
