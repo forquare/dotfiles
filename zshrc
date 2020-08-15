@@ -221,8 +221,10 @@ dirhash(){
 #####################
 #   TILIX           #
 #####################
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-        source /etc/profile.d/vte.sh
+if [ -f /etc/profile.d/vte.sh ]; then
+	if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+		source /etc/profile.d/vte.sh
+	fi
 fi
 
 #####################
