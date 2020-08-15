@@ -1,5 +1,5 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.35 for bil on Sun Oct 30 22:45:36 2016.
+# Written by xscreensaver-demo 5.44 for bil on Sun May  3 20:15:05 2020.
 # https://www.jwz.org/xscreensaver/
 
 timeout:	0:10:00
@@ -274,6 +274,26 @@ programs:								      \
   GL: 				hydrostat -root				    \n\
   GL: 				raverhoop -root				    \n\
   GL: 				unicrud -root				    \n\
+  GL: 				cubestack -root				    \n\
+  GL: 				cubetwist -root				    \n\
+  GL: 				discoball -root				    \n\
+  GL: 				hexstrut -root				    \n\
+  GL: 				splodesic -root				    \n\
+  GL: 				esper -root				    \n\
+  GL: 				vigilance -root				    \n\
+  GL: 				crumbler -root				    \n\
+				filmleader -root			    \n\
+				glitchpeg -root				    \n\
+  GL: 				handsy -root				    \n\
+  GL: 				maze3d -root				    \n\
+  GL: 				peepers -root				    \n\
+  GL: 				razzledazzle -root			    \n\
+				vfeedback -root				    \n\
+  GL: 				deepstars -root				    \n\
+  GL: 				gravitywell -root			    \n\
+				scooter -root				    \n\
+  GL: 				etruscanvenus -root			    \n\
+  GL: 				gibson -root				    \n\
 
 
 pointerPollTime:    0:00:05
