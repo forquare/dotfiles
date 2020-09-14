@@ -255,14 +255,5 @@ fi
 #      History      #
 #####################
 
-# 07/05/2020
-# Made somewhat Linux friendly
-
-# 19/12/2018
-# Added LSCOLORS
-
-# 28/05/2017
-# Removed some PATH settings, and moved some others to zshrclocal
-
-# Created: 02/04/2016
-# Cloned much from bashrc
+# 2020-09-14
+# See git logs
