@@ -35,12 +35,6 @@ umask 0022
 # Set PS1 to user@host:$PWD %>
 export PROMPT="%F{cyan}%n@%m:%c %#>%f"
 
-# If we are root, change the PS1 to red
-if [ $(id -u) -eq 0 ]; then
-	# Only happens if `sudo zsh`
-	export PROMPT="%F{red}%n@%m:%c %#>%f"
-fi
-
 # Set the Terminal title if using xterm
 case $TERM in
 	(*xterm*)
