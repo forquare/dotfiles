@@ -77,18 +77,19 @@ fi
 #####################
 #   History Prefs   #
 #####################
-export HISTFILE=~/.zsh_history  # Save history here
-export HISTSIZE=10000           # Internal size
-export SAVEHIST=10000000        # File size
+export HISTFILE=~/.zsh_history   # Save history here
+export HISTSIZE=100000           # Maximum number of  events  stored  in  the  internal  history  list.
+export SAVEHIST=10000000         # Maximum number of history events to save in the history file.
 setopt EXTENDED_HISTORY          # Write the history file in the ":start:elapsed;command" format.
 setopt HIST_EXPIRE_DUPS_FIRST    # Expire duplicate entries first when trimming history.
 setopt HIST_IGNORE_DUPS          # Don't record an entry that was just recorded again.
 setopt HIST_IGNORE_ALL_DUPS      # Delete old recorded entry if new entry is a duplicate.
 setopt HIST_FIND_NO_DUPS         # Do not display a line previously found.
-setopt HIST_REDUCE_BLANKS       # Do not save blank lines
-setopt HIST_IGNORE_SPACE        # Do not save lines preceeded with a space
+setopt HIST_REDUCE_BLANKS        # Do not save blank lines
+setopt HIST_IGNORE_SPACE         # Do not save lines preceeded with a space
 setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history file.
 setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
+setopt HIST_NO_STORE             # Remove  the  history (fc -l) command from the history list when invoked.
 [ $(uname) != "Linux" ] && setopt INC_APPEND_HISTORY_TIME  # Add history to file on execution (Linux doesn't like this)
 alias history='fc -lni 0 -1'
 
