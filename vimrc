@@ -56,6 +56,9 @@ map <leader>ss :setlocal spell!<cr>
 " Stop hideous mouse integration
 autocmd BufEnter * set mouse=
 
+" Backspace should delete more
+set backspace=start,eol,indent
+
 " Split more naturally
 set splitbelow
 set splitright
