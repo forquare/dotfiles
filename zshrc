@@ -222,6 +222,12 @@ if [ -f /etc/profile.d/vte.sh ]; then
 	fi
 fi
 
+
+#####################
+#   iTerm2          #
+#####################
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
 #####################
 #   Command Prefs   #
 #####################
@@ -258,3 +264,4 @@ fi
 
 # 2020-09-14
 # See git logs
+
