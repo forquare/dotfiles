@@ -15,7 +15,23 @@ matches:
       - name: output
         type: shell
         params:
-          cmd: "echo `date -v -1d \"+[[%Y-%m-%d|<< Yesterday]]\"`' | '`date -v +1d \"+[[%Y-%m-%d|Tommorrow >>]]\"`"
+          cmd: "echo `date -v -1d \"+[[%Y-%m-%d_%a|<< Yesterday]]\"`' | '`date -v +1d \"+[[%Y-%m-%d_%a|Tommorrow >>]]\"`"
+  - trigger: ":mbc"
+    word: true
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "echo `date -v -3d \"+[[%Y-%m-%d_%a|<< Last Friday]]\"`' | '`date -v +1d \"+[[%Y-%m-%d_%a|Tommorrow >>]]\"`"
+  - trigger: ":fbc"
+    word: true
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "echo `date -v -1d \"+[[%Y-%m-%d_%a|<< Yesterday]]\"`' | '`date -v +3d \"+[[%Y-%m-%d_%a|Next Monday >>]]\"`"
 
   ######################################################################
   # Examples
