@@ -75,6 +75,19 @@ if [ $(uname) == "FreeBSD" ]; then
 	done
 fi
 
+# Espanso
+if [ $(uname) == "Darwin" ]; then
+	if [ ! -L $HOME/Library/Preferences/espanso/default.yml ]; then
+		mkdir -p $HOME/Library/Preferences/espanso
+		ln -sf $DIR/espanso.yml $HOME/Library/Preferences/espanso/default.yml && echo ".espanso installed"
+	fi
+else
+	if [ ! -L $HOME/.config/espanso/default.yml ]; then
+		mkdir -p $HOME/.config/espanso
+		ln -sf $DIR/espanso.yml $HOME/.config/espanso/default.yml && echo ".espanso installed"
+	fi
+fi	
+
 # gitconfig
 if [ ! -e $HOME/.gitconfig ]; then
 	echo "Git Details"
