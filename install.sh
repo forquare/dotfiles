@@ -33,35 +33,9 @@ vim +PluginInstall +qa > /dev/null 2>&1
 vim +PluginUpdate +qa > /dev/null 2>&1
 vim +PluginClean! +qa > /dev/null 2>&1
 
-if [ -d $DIR/oh-my-tmux ]; then
-	if ! git -C $DIR/oh-my-tmux pull --stat 2>&1 | grep -q 'Already up to date.'; then
-		echo ".tmux updated"
-		CHANGED=1
-	fi
-else
-	git clone https://github.com/gpakosz/.tmux.git $DIR/oh-my-tmux > /dev/null 2>&1 && echo ".tmux cloned" && CHANGED=1
-fi
-
-for file in zshrc gitignore vimrc vim tmux.conf.local pyrc zsh-syntax-highlighting; do
+for file in zshrc gitignore vimrc vim pyrc zsh-syntax-highlighting; do
 	if [ ! -e $HOME/.${file} ]; then
 		ln -sf $DIR/$file $HOME/.$file && echo ".$file installed"
-		CHANGED=1
-	fi
-done
-
-# This is for files inside directories
-for file in oh-my-tmux/.tmux.conf ; do
-	_file=$(basename $file)
-	_dir=$(dirname $file)
-	
-	if echo ${_file} | grep '^\.' > /dev/null; then
-		PREFIX=''
-	else
-		PREFIX='.'
-	fi
-	
-	if [ ! -e $HOME/${PREFIX}${_file} ]; then
-		ln -sf $DIR/$_dir/$_file $HOME/${PREFIX}$_file && echo "${PREFIX}$_file installed"
 		CHANGED=1
 	fi
 done
@@ -107,6 +81,15 @@ if [ ! -e $HOME/.gitconfig ]; then
 	echo ".gitconfig installed"
 	CHANGED=1
 fi
+
+# Old stuff to check and clean up
+for file in tmux.conf.local tmux.conf; do
+	if [ -L $HOME/.${file} ]; then
+		rm -f $HOME/.$file && echo ".$file removed"
+		CHANGED=1
+	fi
+done
+
 
 if [ ${CHANGED} -eq 0 ]; then
 	echo 'Nothing changed.'
