@@ -22,6 +22,7 @@
   default = current
 [merge]
   tool = vimdiff
+[mergetool]
   keepBackup = false
 [pull]
   ff = only
