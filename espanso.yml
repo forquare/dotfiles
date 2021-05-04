@@ -34,7 +34,7 @@ matches:
           cmd: "echo `date -v -1d \"+[[%Y-%m-%d_%a|<< Yesterday]]\"`' | '`date -v +3d \"+[[%Y-%m-%d_%a|Next Monday >>]]\"`"
   - trigger: ":meeting"
     replace: "### 0000 Meeting\n- Meeting Link: \nAttendees: \nTasks: \nNotes: \nTags: \n"
-  - trigger: "Mik"
+  - trigger: "Mik "
     replace: "Mikołaj"
     
 
