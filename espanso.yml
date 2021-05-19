@@ -35,7 +35,7 @@ matches:
   - trigger: ":meeting"
     replace: "### 0000 Meeting\n- Meeting Link: \nAttendees: \nTasks: \nNotes: \nTags: \n"
   - trigger: "Mik "
-    replace: "Mikołaj"
+    replace: "Mikołaj "
     
 
   ######################################################################
