@@ -9,7 +9,6 @@
 matches:
   # Breadcrumb
   - trigger: ":bc"
-    word: true
     replace: "{{output}}"
     vars:
       - name: output
@@ -17,7 +16,6 @@ matches:
         params:
           cmd: "echo `date -v -1d \"+[[%Y-%m-%d_%a|<< Yesterday]]\"`' | '`date -v +1d \"+[[%Y-%m-%d_%a|Tommorrow >>]]\"`"
   - trigger: ":mbc"
-    word: true
     replace: "{{output}}"
     vars:
       - name: output
@@ -25,7 +23,6 @@ matches:
         params:
           cmd: "echo `date -v -3d \"+[[%Y-%m-%d_%a|<< Last Friday]]\"`' | '`date -v +1d \"+[[%Y-%m-%d_%a|Tommorrow >>]]\"`"
   - trigger: ":fbc"
-    word: true
     replace: "{{output}}"
     vars:
       - name: output
@@ -34,7 +31,8 @@ matches:
           cmd: "echo `date -v -1d \"+[[%Y-%m-%d_%a|<< Yesterday]]\"`' | '`date -v +3d \"+[[%Y-%m-%d_%a|Next Monday >>]]\"`"
   - trigger: ":meeting"
     replace: "### 0000 Meeting\n- Meeting Link: \nAttendees: \nNotes: \n"
-  - trigger: "Mik "
+  - trigger: "Mik"
+    word: true
     replace: "Mikołaj "
     
 
