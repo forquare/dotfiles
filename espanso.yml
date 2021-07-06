@@ -34,29 +34,3 @@ matches:
   - trigger: "Mik"
     word: true
     replace: "Mikołaj "
-    
-
-  ######################################################################
-  # Examples
-  ######################################################################
-  # Simple text replacement
-  - trigger: ":espanso"
-    replace: "Hi there!"
-
-  # Dates
-  - trigger: ":date"
-    replace: "{{mydate}}"
-    vars:
-      - name: mydate
-        type: date
-        params:
-          format: "%Y-%m-%d"
-
-  # Shell commands
-  - trigger: ":shell"
-    replace: "{{output}}"
-    vars:
-      - name: output
-        type: shell
-        params:
-          cmd: "echo Hello from your shell"
