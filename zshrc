@@ -128,11 +128,6 @@ if [[ $(uname) == "Darwin" ]]; then
 	export PATH="$PATH:/sbin:/usr/sbin"
 fi
 
-# Awesome Perlbrew
-if [ -f ~/perl5/perlbrew/etc/bashrc ]; then
-	source ~/perl5/perlbrew/etc/bashrc
-fi
-
 if [ -d $HOME/.cargo/bin ]; then
 	export PATH="$PATH:$HOME/.cargo/bin"
 fi
@@ -153,6 +148,11 @@ fi
 # Make sure /usr/local/bin is at the forefront of PATH
 if [ -d /usr/local/bin ]; then
 	export PATH="/usr/local/bin:$PATH"
+fi
+
+# Actually Perlbrew needs to be  first
+if [ -f ~/perl5/perlbrew/etc/bashrc ]; then
+	source ~/perl5/perlbrew/etc/bashrc
 fi
 
 #####################
