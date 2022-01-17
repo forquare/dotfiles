@@ -49,7 +49,7 @@ setopt no_auto_remove_slash
 autoload edit-command-line; zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
-precmd {
+precmd(){
 	# Write some info to terminal title.
 	# This is seen when the shell prompts for input.
 	case $TERM in
@@ -59,7 +59,7 @@ precmd {
 	esac
 }
 
-preexec {
+preexec(){
 	# Write command and args to terminal title.
 	# This is seen while the shell waits for a command to complete.
 	case $TERM in
