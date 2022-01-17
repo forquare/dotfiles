@@ -32,8 +32,8 @@ fi
 # 755 for directories, 644 for files
 umask 0022
 
-# Set PS1 to user@host:$PWD %>
-export PS1='%F{cyan}%n@%m:%c %#>%f'
+# Set PS1 to $PWD %>
+export PS1='%F{cyan}%c %#>%f'
 
 # Set right PS1 to VCS info
 export RPS1='%F{cyan}${vcs_info_msg_0_}%f'
