@@ -56,7 +56,7 @@ esac
 # Correct spelling
 setopt CORRECT
 
-# Err...?  Document soon please :D
+# Load autocompletion
 autoload -Uz compinit
 compinit
 
