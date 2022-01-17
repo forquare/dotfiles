@@ -179,7 +179,8 @@ fi
 #####################
 # If we are coming in via SSH, turn the PS1 yellow
 if [ -n "$SSH_CLIENT" ]; then
-	export PROMPT="%F{yello}%n@%m:%c %#>%f"
+	export PS1="%F{yello}%n@%m:%c %#>%f"
+	export RPS1='%F{yello}${vcs_info_msg_0_}%f'
 fi
 
 #####################
