@@ -33,7 +33,10 @@ fi
 umask 0022
 
 # Set PS1 to user@host:$PWD %>
-export PROMPT="%F{cyan}%n@%m:%c %#>%f"
+export PS1='%F{cyan}%n@%m:%c %#>%f'
+
+# Set right PS1 to VCS info
+export RPS1='%F{cyan}${vcs_info_msg_0_}%f'
 
 # Correct spelling
 setopt CORRECT
@@ -49,7 +52,21 @@ setopt no_auto_remove_slash
 autoload edit-command-line; zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
+# Enable vcs_info
+autoload -Uz vcs_info
+setopt prompt_subst
+
+# Configure vcs_info
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' unstagedstr ' *'
+zstyle ':vcs_info:*' stagedstr ' +'
+zstyle ':vcs_info:git:*' formats       '(%b%u%c)'
+zstyle ':vcs_info:git:*' actionformats '(%b|%a%u%c)'
+
 precmd(){
+	# Load vcs_info
+	vcs_info
+	
 	# Write some info to terminal title.
 	# This is seen when the shell prompts for input.
 	case $TERM in
