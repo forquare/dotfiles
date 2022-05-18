@@ -40,15 +40,6 @@ for file in zshrc gitignore vimrc vim pyrc zsh-syntax-highlighting; do
 	fi
 done
 
-if [ $(uname) == "FreeBSD" ]; then
-	for file in xsession xscreensaver conky.d cwmrc Xresources freebsd_wallpaper.sh; do
-		if [ ! -e $HOME/.${file} ]; then
-			ln -sf $DIR/$file $HOME/.$file && echo ".$file installed"
-			CHANGED=1
-		fi
-	done
-fi
-
 # Espanso
 if [ $(uname) == "Darwin" ]; then
 	if [ ! -L $HOME/Library/Preferences/espanso/default.yml ]; then
