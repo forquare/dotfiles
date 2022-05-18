@@ -83,7 +83,7 @@ if [ ! -e $HOME/.gitconfig ]; then
 fi
 
 # Old stuff to check and clean up
-for file in tmux.conf.local tmux.conf; do
+for file in tmux.conf.local tmux.conf xsession xscreensaver conky.d Xresources cwmrc freebsd_wallpaper.sh; do
 	if [ -L $HOME/.${file} ]; then
 		rm -f $HOME/.$file && echo ".$file removed"
 		CHANGED=1
