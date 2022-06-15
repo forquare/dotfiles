@@ -125,6 +125,9 @@ fi
 if command -v git > /dev/null; then
 	alias git='git --no-pager'
 fi
+if command -v kubectl > /dev/null; then
+	alias k='kubectl'
+fi
 
 alias mkdir='mkdir -p'
 [ $(uname) = "Linux" ] && alias ls='ls -hF --color' || alias ls='ls -hF'
