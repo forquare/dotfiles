@@ -126,11 +126,8 @@ if command -v git > /dev/null; then
 	alias git='git --no-pager'
 fi
 
-alias ncurl='curl -v -o /dev/null'
 alias mkdir='mkdir -p'
 [ $(uname) = "Linux" ] && alias ls='ls -hF --color' || alias ls='ls -hF'
-alias setgopath='export GOPATH=$(pwd)'
-alias clsb="printf '\033\143'" # Clear scrollback
 alias jsonformat="python -m json.tool"
 alias _clear='clear'
 alias clear='_clear && printf "\033[3J"'
