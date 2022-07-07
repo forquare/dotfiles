@@ -109,7 +109,7 @@ setopt HIST_IGNORE_SPACE         # Do not save lines preceeded with a space
 setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history file.
 setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
 setopt HIST_NO_STORE             # Remove  the  history (fc -l) command from the history list when invoked.
-[ $(uname) != "Linux" ] && setopt INC_APPEND_HISTORY_TIME  # Add history to file on execution (Linux doesn't like this)
+setopt INC_APPEND_HISTORY_TIME   # Add history to file after execution
 alias history='fc -lni 0 -1'
 
 #####################
