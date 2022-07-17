@@ -167,6 +167,11 @@ if [ -d $HOME/bin ]; then
         export PATH="$HOME/bin:$PATH"
 fi
 
+# Rancher Desktop
+if [ -d $HOME/.rd/bin ]; then
+	export PATH="$HOME/.rd/bin:$PATH"
+fi
+
 # Make sure /usr/local/bin is at the forefront of PATH
 if [ -d /usr/local/bin ]; then
 	export PATH="/usr/local/bin:$PATH"
