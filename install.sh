@@ -42,14 +42,16 @@ done
 
 # Espanso
 if [ $(uname) == "Darwin" ]; then
-	if [ ! -L $HOME/Library/Preferences/espanso/default.yml ]; then
-		mkdir -p $HOME/Library/Preferences/espanso
-		ln -sf $DIR/espanso.yml $HOME/Library/Preferences/espanso/default.yml && echo ".espanso installed"
+	if [ ! -L $HOME/Library/Application\ Support/espanso/match/base.yml ]; then
+		mkdir -p $HOME/Library/Application\ Support/espanso/match
+		ln -sf $DIR/espanso.yml $HOME/Library/Application\ Support/espanso/match/base.yml && echo ".espanso installed"
+		CHANGED=1
 	fi
 else
 	if [ ! -L $HOME/.config/espanso/default.yml ]; then
 		mkdir -p $HOME/.config/espanso
 		ln -sf $DIR/espanso.yml $HOME/.config/espanso/default.yml && echo ".espanso installed"
+		CHANGED=1
 	fi
 fi	
 
