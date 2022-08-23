@@ -150,8 +150,14 @@ if [[ $(uname) == "Darwin" ]]; then
 	export PATH="$PATH:/sbin:/usr/sbin"
 fi
 
+# For Rust
 if [ -d $HOME/.cargo/bin ]; then
 	export PATH="$PATH:$HOME/.cargo/bin"
+fi
+
+# For Go
+if [ -d $HOME/go/bin ]; then
+	export PATH="$PATH:$HOME/go/bin"
 fi
 
 # Mostly I have scripts from nextcloud
