@@ -247,7 +247,7 @@ dirhash(){
 		return 1
 	fi
 	cd $1
-	hash=$(find . -type f -exec sha256sum {} + | awk '{print $2, "\t", $1}' | sort | sha256sum | awk '{print $1}')
+	hash=$(find . -type f -exec shasum -a 256 {} + | awk '{print $2, "\t", $1}' | sort | shasum -a 256 | awk '{print $1}')
 	printf "%s\t%s\n" $1 $hash
 	cd - > /dev/null
 }
