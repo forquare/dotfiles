@@ -1,6 +1,11 @@
 [user]
   name = NAME
   email = EMAIL
+  signingkey = KEY
+[commit]
+  gpgsign = true
+[github]
+  user = GITHUB
 [alias]
   co = checkout
   amend = commit --ammend
@@ -16,8 +21,6 @@
   editor = vim
 [format]
   pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset
-[github]
-  user = GITHUB
 [push]
   default = current
 [merge]
