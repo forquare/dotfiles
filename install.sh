@@ -2,6 +2,26 @@
 
 CHANGED=0
 
+# Old stuff to check and clean up
+for file in tmux.conf.local tmux.conf xsession xscreensaver conky.d Xresources cwmrc freebsd_wallpaper.sh; do
+	if [ -L $HOME/.${file} ]; then
+		rm -f $HOME/.$file && echo ".$file removed"
+		CHANGED=1
+	fi
+done
+
+if [ -f $HOME/.gitconfig ]; then
+	if ! grep -q 'ben@lavery-griffiths.com' $HOME/.gitconfig; then
+		rm $HOME/.gitconfig && echo "$HOME/.gitconfig contains old details - regenerate"
+		CHANGED=1
+	fi
+fi
+
+
+################################################################################
+################################################################################
+
+
 if ! echo $(uname) | grep -i BSD > /dev/null; then
 	# If we aren't on a *BSD then we'll use Bash to figure out where we are
 	DIR=$( bash -c 'cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd' ) 
@@ -77,13 +97,9 @@ if [ ! -e $HOME/.gitconfig ]; then
 	CHANGED=1
 fi
 
-# Old stuff to check and clean up
-for file in tmux.conf.local tmux.conf xsession xscreensaver conky.d Xresources cwmrc freebsd_wallpaper.sh; do
-	if [ -L $HOME/.${file} ]; then
-		rm -f $HOME/.$file && echo ".$file removed"
-		CHANGED=1
-	fi
-done
+
+################################################################################
+################################################################################
 
 
 if [ ${CHANGED} -eq 0 ]; then
