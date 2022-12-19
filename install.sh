@@ -12,8 +12,12 @@ done
 
 if [ -f $HOME/.gitconfig ]; then
 	if ! grep -q 'ben@lavery-griffiths.com' $HOME/.gitconfig; then
-		rm $HOME/.gitconfig && echo "$HOME/.gitconfig contains old details - regenerate"
-		CHANGED=1
+		read -p "$HOME/.gitconfig contains old details - regenerate? [y/N]: " regen_gitconfig
+		if echo "${regen_gitconfig}" | grep -qi '^y'; then
+			echo "Moving .gitconfig to $HOME/.gitconfig_moved_$(date '+%Y-%m-%d')"
+			mv $HOME/.gitconfig $HOME/.gitconfig_moved_$(date '+%Y-%m-%d')
+			CHANGED=1
+		fi
 	fi
 fi
 
