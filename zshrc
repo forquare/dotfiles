@@ -300,3 +300,11 @@ export LS_COLORS='di=37:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30
 if [ -f $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then 
 	source $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
+
+
+#####################
+#      Atuin        #
+#####################
+if command -v atuin > /dev/null; then
+	eval "$(atuin init zsh)"
+fi
