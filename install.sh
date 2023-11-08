@@ -36,7 +36,7 @@ else
 fi
 
 if [ -d $DIR/zsh-syntax-highlighting ]; then
-	if ! git -C $DIR/zsh-syntax-highlighting pull --stat 2>&1 | grep -q 'Already up to date.'; then
+	if ! git -C $DIR/zsh-syntax-highlighting pull --stat 2>&1 | grep -qE 'Already up to date.|Already up-to-date.'; then
 		echo ".zsh-syntax-highlighting updated"
 		CHANGED=1
 	fi
@@ -45,7 +45,7 @@ else
 fi
 
 if [ -d $DIR/vim/bundle/Vundle.vim ]; then
-	if ! git -C $DIR/vim/bundle/Vundle.vim pull --stat 2>&1 | grep -q 'Already up to date.'; then
+	if ! git -C $DIR/vim/bundle/Vundle.vim pull --stat 2>&1 | grep -qE 'Already up to date.|Already up-to-date.'; then
 		echo "vundle updated"
 		CHANGED=1
 	fi
@@ -65,7 +65,7 @@ for file in zshrc gitignore vimrc vim pyrc zsh-syntax-highlighting; do
 done
 
 # Espanso
-if [ $(uname) == "Darwin" ]; then
+if [ $(uname) = "Darwin" ]; then
 	if [ ! -L $HOME/Library/Application\ Support/espanso/match/base.yml ]; then
 		mkdir -p $HOME/Library/Application\ Support/espanso/match
 		ln -sf $DIR/espanso.yml $HOME/Library/Application\ Support/espanso/match/base.yml && echo ".espanso installed"
@@ -85,12 +85,13 @@ if [ -f ~/.config/atuin/config.toml ]; then
 		property=$(echo $LINE | awk '{print $1}')
 		value=$(echo $LINE | awk '{print $2}')
 		if ! grep -q "^$property = $value" ~/.config/atuin/config.toml; then
-			sed -i.bak "s/# *$property *=.*/$property = $value/" ~/.config/atuin/config.toml
+			sed -i.bak "s|# *$property *=.*|$property = $value|" ~/.config/atuin/config.toml
 			CHANGED=1
 		fi
 	done < $DIR/atuin.conf
 	if [ -f ~/.config/atuin/config.toml.bak ]; then
 		rm ~/.config/atuin/config.toml.bak
+		echo "Atuin configured"
 	fi
 fi
 
