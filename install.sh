@@ -79,6 +79,21 @@ else
 	fi
 fi	
 
+# Atuin
+if [ -f ~/.config/atuin/config.toml ]; then
+	while read -r LINE; do
+		property=$(echo $LINE | awk '{print $1}')
+		value=$(echo $LINE | awk '{print $2}')
+		if ! grep -q "^$property = $value" ~/.config/atuin/config.toml; then
+			sed -i.bak "s/# *$property *=.*/$property = $value/" ~/.config/atuin/config.toml
+			CHANGED=1
+		fi
+	done < $DIR/atuin.conf
+	if [ -f ~/.config/atuin/config.toml.bak ]; then
+		rm ~/.config/atuin/config.toml.bak
+	fi
+fi
+
 # gitconfig
 if [ ! -e $HOME/.gitconfig ]; then
 	echo "Git Details"
