@@ -87,13 +87,6 @@ preexec(){
 }
 
 #####################
-#     LOCAL.RC      #
-#####################
-if [ -f "$HOME/.zshrclocal" ]; then
-	source "$HOME/.zshrclocal"
-fi
-
-#####################
 #   History Prefs   #
 #####################
 export HISTFILE=~/.zsh_history   # Save history here
@@ -114,29 +107,6 @@ setopt HIST_SAVE_BY_COPY         # write out a copy of the file named $HISTFILE.
 alias history='fc -lni 0 -1'
 
 #####################
-#      Aliases      #
-#####################
-if command -v less > /dev/null; then
-	alias more='less'
-fi
-if command -v vim > /dev/null; then
-	alias vi='vim'
-	alias view='vim -R'
-fi
-if command -v git > /dev/null; then
-	alias git='git --no-pager'
-fi
-if command -v kubectl > /dev/null; then
-	alias k='kubectl'
-fi
-
-alias mkdir='mkdir -p'
-[ $(uname) = "Linux" ] && alias ls='ls -hF --color' || alias ls='ls -hF'
-alias jsonformat="python -m json.tool"
-alias _clear='clear'
-alias clear='_clear && printf "\033[3J"'
-
-#####################
 #   PATH Settings   #
 #####################
 # If I'm on a Mac check this stuff out, if not then don't even bother
@@ -148,11 +118,6 @@ if [[ $(uname) == "Darwin" ]]; then
 
 	#macOS seems to put useful things like ping and chown under /sbin or /usr/sbin...
 	export PATH="$PATH:/sbin:/usr/sbin"
-fi
-
-# For Rust
-if [ -d $HOME/.cargo/bin ]; then
-	export PATH="$PATH:$HOME/.cargo/bin"
 fi
 
 # For Go
@@ -182,15 +147,43 @@ if [ -d /usr/local/sbin ]; then
 	export PATH="/usr/local/sbin:$PATH"
 fi
 
+# Check homebrew
+if [ -f /opt/homebrew/bin/brew ]; then
+	eval "$(/opt/homebrew/bin/brew shellenv)"
+	export PATH="$PATH:/opt/homebrew/bin"
+elif [ -f /usr/local/bin/brew ]; then
+	eval "$(/usr/local/bin/brew shellenv)"
+	export PATH="$PATH:/usr/local/bin"
+fi
+
 # Make sure /usr/local/bin is at the forefront of PATH
 if [ -d /usr/local/bin ]; then
 	export PATH="/usr/local/bin:$PATH"
 fi
 
-# Actually Perlbrew needs to be  first
-if [ -f ~/perl5/perlbrew/etc/bashrc ]; then
-	source ~/perl5/perlbrew/etc/bashrc
+
+#####################
+#      Aliases      #
+#####################
+if command -v less > /dev/null; then
+	alias more='less'
 fi
+if command -v vim > /dev/null; then
+	alias vi='vim'
+	alias view='vim -R'
+fi
+if command -v git > /dev/null; then
+	alias git='git --no-pager'
+fi
+if command -v kubectl > /dev/null; then
+	alias k='kubectl'
+fi
+
+alias mkdir='mkdir -p'
+[ $(uname) = "Linux" ] && alias ls='ls -hF --color' || alias ls='ls -hF'
+alias jsonformat="python -m json.tool"
+alias _clear='clear'
+alias clear='_clear && printf "\033[3J"'
 
 #####################
 #        SSH       #
@@ -314,3 +307,11 @@ fi
 #      GPG          #
 #####################
 export GPG_TTY=$(tty)
+
+
+#####################
+#     LOCAL.RC      #
+#####################
+if [ -f "$HOME/.zshrclocal" ]; then
+	source "$HOME/.zshrclocal"
+fi
