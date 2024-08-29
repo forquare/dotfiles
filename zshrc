@@ -6,6 +6,7 @@
 export EDITOR='vim'
 export PAGER='less'
 export VISUAL='vim'
+export GH_PAGER="cat"
 
 export LESS='-X' # Don't send termcap initialization and deinitialization strings to the terminal
 
