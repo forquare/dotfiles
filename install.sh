@@ -95,6 +95,19 @@ if [ -f ~/.config/atuin/config.toml ]; then
 	fi
 fi
 
+# Ghostty
+if command -v ghostty > /dev/null; then
+	ghostty_config_dir="${XDG_CONFIG_HOME:-"$HOME/.config"}/ghostty"
+	ghostty_config_file="${ghostty_config_dir}/config"
+	if [ ! -d ${ghostty_config_file} ]; then
+		mkdir -p ${ghostty_config_dir}
+	fi
+	if [ ! -L "${ghostty_config_file}" ]; then
+		ln -sf "${DIR}/ghostty.config" "${ghostty_config_file}" && echo "${ghostty_config_file} installed"
+		CHANGED=1
+	fi
+fi
+
 # gitconfig
 if [ ! -e $HOME/.gitconfig ]; then
 	echo "Git Details"
