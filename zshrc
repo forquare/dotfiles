@@ -250,6 +250,18 @@ dirhash(){
 	cd - > /dev/null
 }
 
+
+#####################
+#   AI for Git      #
+#####################
+gitwip(){
+	if command -v ollama > /dev/null && pgrep -q ollama && ollama list | grep -q 'codellama:'; then
+		MSG="$(git diff | ollama run --hidethinking codellama "Generate a concise commit message for the changes below. For the title of the commit, summarise within a maximum of 65 characters. The body can be as long and verbose as required - if necessary marmaid diagrams can be embedded.")"
+		git add . && git commit -m "${MSG}" && git push
+	fi
+}
+
+
 #####################
 #   TILIX           #
 #####################
