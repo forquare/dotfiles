@@ -64,21 +64,6 @@ for file in zshrc gitignore vimrc vim pyrc zsh-syntax-highlighting; do
 	fi
 done
 
-# Espanso
-if [ $(uname) = "Darwin" ]; then
-	if [ ! -L $HOME/Library/Application\ Support/espanso/match/base.yml ]; then
-		mkdir -p $HOME/Library/Application\ Support/espanso/match
-		ln -sf $DIR/espanso.yml $HOME/Library/Application\ Support/espanso/match/base.yml && echo ".espanso installed"
-		CHANGED=1
-	fi
-else
-	if [ ! -L $HOME/.config/espanso/default.yml ]; then
-		mkdir -p $HOME/.config/espanso
-		ln -sf $DIR/espanso.yml $HOME/.config/espanso/default.yml && echo ".espanso installed"
-		CHANGED=1
-	fi
-fi	
-
 # Atuin
 if [ -f ~/.config/atuin/config.toml ]; then
 	while read -r LINE; do
