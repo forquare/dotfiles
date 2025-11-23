@@ -2,12 +2,11 @@
 #####################
 #    Shell Prefs    #
 #####################
-# Set edditing and viewing preferences
-export EDITOR='vim'
+# Set editing and viewing preferences
 export PAGER='less'
-export VISUAL='vim'
 export GH_PAGER="cat"
-
+export EDITOR='vim' # Default to vim, this will be overridden if nvim is found
+export VISUAL='vim' # Default to vim, this will be overridden if nvim is found
 export LESS='-X' # Don't send termcap initialization and deinitialization strings to the terminal
 
 # Vi keys, what else?
@@ -164,12 +163,36 @@ fi
 
 
 #####################
+#   Editor Prefs    #
+#####################
+if command -v nvim > /dev/null; then
+	export EDITOR='nvim'
+	export VISUAL='nvim'
+	export GIT_MERGETOOL="nvim -d"
+	export GIT_DIFFTOOL="nvim -d"
+	export GIT_EDITOR='nvim'
+elif command -v vim > /dev/null; then
+	export EDITOR='vim'
+	export VISUAL='vim'
+	export GIT_MERGETOOL="vimdiff"
+	export GIT_DIFFTOOL="vimdiff"
+	export GIT_EDITOR='vim'
+fi
+
+
+#####################
 #      Aliases      #
 #####################
 if command -v less > /dev/null; then
 	alias more='less'
 fi
-if command -v vim > /dev/null; then
+if command -v nvim > /dev/null; then
+	alias nv='nvim'
+	alias vim='nvim'
+	alias vi='nvim'
+	alias view='nvim -R'
+	alias vimdiff='nvim -d'
+elif command -v vim > /dev/null; then
 	alias vi='vim'
 	alias view='vim -R'
 fi

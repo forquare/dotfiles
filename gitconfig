@@ -2,31 +2,44 @@
   name = NAME
   email = EMAIL
   signingkey = KEY
+
 [commit]
   gpgsign = true
+
 [github]
   user = GITHUB
+
 [alias]
   co = checkout
   amend = commit --ammend
   cane = commit --amend --no-edit
   history = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --max-count=14
+
 [color]
   diff = auto
   status = auto
   branch = auto
+
 [core]
   excludesfile = HOME/.gitignore
   autocrlf = input
-  editor = vim
+  editor = "$GIT_EDITOR"
+
 [format]
   pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset
+
 [push]
   default = current
   autoSetupRemote = true
+
 [merge]
-  tool = vimdiff
+  tool = "$GIT_MERGETOOL"
+
+[diff]
+  tool = "$GIT_DIFFTOOL"
+
 [mergetool]
   keepBackup = false
+
 [pull]
   ff = only
