@@ -34,6 +34,11 @@ return {
       'saghen/blink.cmp',
     },
     config = function()
+      local os = require 'config.os'
+      if os.is_freebsd then
+        vim.notify('LSP disabled on FreeBSD (basic editor mode)', vim.log.levels.INFO)
+        return
+      end
       -- Brief aside: **What is LSP?**
       --
       -- LSP is an initialism you've probably heard, but might not understand what it is.
@@ -288,10 +293,10 @@ return {
       --
       -- You can add other tools here that you want Mason to install
       -- for you, so that they are available from within Neovim.
-      local uname = vim.loop.os_uname()
-      local sysname = uname.sysname or ''
 
-      if sysname == 'Linux' or sysname == 'Darwin' or sysname == 'Windows_NT' then
+      local os = require 'config.os'
+
+      if not os.is_freebsd then
         local ensure_installed = vim.tbl_keys(servers or {})
         vim.list_extend(ensure_installed, {
           'stylua', -- Used to format Lua code
@@ -319,10 +324,7 @@ return {
         })
         require('mason-tool-installer').setup { ensure_installed = ensure_installed }
       else
-        vim.notify(
-          'mason-tool-installer disabled on this platform (' .. sysname .. ');' .. 'install LSP/formatters via pkg/ports instead.',
-          vim.log.levels.WARN
-        )
+        vim.notify('Skipping Mason tool installation on FreeBSD; install tools manually if needed.', vim.log.levels.INFO)
       end
 
       require('mason-lspconfig').setup {
