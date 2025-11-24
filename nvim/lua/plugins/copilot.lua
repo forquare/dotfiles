@@ -5,6 +5,11 @@ return {
     event = 'InsertEnter', -- lazy-load when you start typing
     build = ':Copilot auth', -- run once to set up auth (optional, but handy)
     config = function()
+      local os = require 'config.os'
+      if os.is_freebsd then
+        vim.notify('Copilot disabled on FreeBSD (basic editor mode)', vim.log.levels.INFO)
+        return
+      end
       require('copilot').setup {
         panel = {
           enabled = false, -- I find the side panel noisy; enable if you like
