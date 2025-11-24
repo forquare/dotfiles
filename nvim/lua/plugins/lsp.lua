@@ -288,32 +288,42 @@ return {
       --
       -- You can add other tools here that you want Mason to install
       -- for you, so that they are available from within Neovim.
-      local ensure_installed = vim.tbl_keys(servers or {})
-      vim.list_extend(ensure_installed, {
-        'stylua', -- Used to format Lua code
+      local uname = vim.loop.os_uname()
+      local sysname = uname.sysname or ''
 
-        -- Go stuff
-        'gopls', -- Go LSP
-        'goimports', -- Formatter / imports
-        'gofumpt', -- Stricter gofmt (optional, but nice)
-        'golangci-lint', -- Linter (optional, for later)
-        'delve', -- debugger backend, useful later with nvim-dap
+      if sysname == 'Linux' or sysname == 'Darwin' or sysname == 'Windows_NT' then
+        local ensure_installed = vim.tbl_keys(servers or {})
+        vim.list_extend(ensure_installed, {
+          'stylua', -- Used to format Lua code
 
-        -- Shell / POSIX tools
-        'bash-language-server',
-        'shellcheck',
-        'shfmt',
+          -- Go stuff
+          'gopls', -- Go LSP
+          'goimports', -- Formatter / imports
+          'gofumpt', -- Stricter gofmt (optional, but nice)
+          'golangci-lint', -- Linter (optional, for later)
+          'delve', -- debugger backend, useful later with nvim-dap
 
-        -- Helm
-        'helm_ls',
+          -- Shell / POSIX tools
+          'bash-language-server',
+          'shellcheck',
+          'shfmt',
 
-        -- YAML
-        'yaml-language-server',
+          -- Helm
+          'helm_ls',
 
-        -- JSON
-        'prettierd',
-      })
-      require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+          -- YAML
+          'yaml-language-server',
+
+          -- JSON
+          'prettierd',
+        })
+        require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+      else
+        vim.notify(
+          'mason-tool-installer disabled on this platform (' .. sysname .. ');' .. 'install LSP/formatters via pkg/ports instead.',
+          vim.log.levels.WARN
+        )
+      end
 
       require('mason-lspconfig').setup {
         ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
