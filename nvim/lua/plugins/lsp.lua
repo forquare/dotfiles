@@ -259,6 +259,10 @@ return {
           },
         },
 
+        marksman = {
+          filetypes = { 'markdown', 'md' },
+        },
+
         bashls = {
           filetypes = { 'sh' }, -- Neovim uses 'sh' for POSIX shell scripts
           -- You can add settings here if needed; defaults are fine to start.
