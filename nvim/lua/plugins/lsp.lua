@@ -268,6 +268,8 @@ return {
           -- You can add settings here if needed; defaults are fine to start.
         },
 
+        gh_actions_ls = {},
+
         lua_ls = {
           -- cmd = { ... },
           -- filetypes = { ... },
@@ -325,6 +327,9 @@ return {
 
           -- JSON
           'prettierd',
+
+          -- GHA
+          'gh-actions-language-server',
         })
         require('mason-tool-installer').setup { ensure_installed = ensure_installed }
       else
